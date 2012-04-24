@@ -22,10 +22,6 @@
     <prerequisites>
         <maven>3.0.4</maven>
     </prerequisites>
-    <ciManagement>
-        <system>Jenkins</system>
-        <url>http://huschteguzzel.de/hudson/job/oneandone-${project.artifactId}/</url>
-    </ciManagement>
 
     <scm>
         <connection>scm:git:git://github.com/1and1/${project.artifactId}.git</connection>
@@ -83,7 +79,10 @@
         <system>GitHub</system>
         <url>https://github.com/1and1/${project.artifactId}/issues/?sort=created&amp;state=open</url>
     </issueManagement>
-
+    <ciManagement>
+        <system>hudson</system>
+        <url>http://huschteguzzel.de/hudson/job/oneandone-foss-parent/</url>
+    </ciManagement>
     <developers>
         <developer>
             <id>mifr</id>
@@ -304,23 +303,11 @@
                         </execution>
                     </executions>
                 </plugin>
-                <!--plugin>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>${maven-checkstyle-plugin.version}</version>
-                    <configuration>
-                        <enableRulesSummary>false</enableRulesSummary>
-                        <configLocation>${maven-checkstyle-plugin.configLocation}</configLocation>
-                        <suppressionsLocation>${maven-checkstyle-plugin.suppressionsLocation}</suppressionsLocation>
-                    </configuration>
-                    <dependencies>
-                        <dependency>
-                            <groupId>net.oneandone</groupId>
-                            <artifactId>foss-configs</artifactId>
-                            <version>1.0-SNAPSHOT</version>
-                        </dependency>
-                    </dependencies>
-                </plugin-->
+                    <artifactId>maven-plugin-plugin</artifactId>
+                    <version>2.9</version>
+                </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>findbugs-maven-plugin</artifactId>
