@@ -1,0 +1,6 @@
+<FindBugsFilter>
+    <Match>
+        <Class name="~.*net\.oneandone\.testlinkjunit\.tljunit\.TestLinkXmlRunListener.*" />
+        <Bug pattern="DM_DEFAULT_ENCODING" />
+    </Match>
+</FindBugsFilter>

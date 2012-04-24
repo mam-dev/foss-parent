@@ -1,0 +1,52 @@
+#macro ( roles $roles ) 
+#if ( $roles.size() > 0 )
+#set ( $roleSize = $roles.size() - 1 )
+&nbsp;<i>(#foreach ( $role in $roles.subList(0, $roleSize ) )$role, #end$roles.get($roleSize))</i>
+#end
+#end
+
+#macro ( singledevelopersOrContributors $devcon )
+    #if ( $devcon.url )
+        <a href="$devcon.url" title="$!devcon.id">$devcon.name#roles( $devcon.roles )</a>
+    #else
+        $devcon.name#roles( $decon.roles )
+    #end
+#end
+
+#macro ( developersOrContributors $title $devcons )
+#if ( $devcons.size() > 0 )
+#set ( $devconSize = $devcons.size() - 1 )
+<dt><b>$title:</b></dt>
+<dd>#foreach ( $devcon in $devcons.subList(0, $devconSize ) )
+#singledevelopersOrContributors( $devcon ), #end
+#singledevelopersOrContributors( $devcons.get($devconSize) )
+</dd>
+#end
+#end
+
+#macro ( parentGAV )
+#if ( $project.parent )
+ #set ( $parent = $project.parent )
+ <i><a title="parent build job" href="$!parent.ciManagement.url">(#gavSpan($parent "parent.gav"))</a></i>
+#else
+ <i>(no parent)</i>
+#end
+#end
+
+#macro ( gavSpan $p $id )
+<span id="$id">$p.groupId:$p.artifactId:$p.version<span>
+#end
+<dl>
+<dt><b>GAV:</b></dt>
+<dd>#gavSpan($project "gav")#parentGAV()</dd>
+<dt><b>Description:</b></dt>
+<dd id="project.description">$project.description</dd>
+<dt><b>Links:</b></dt>
+<dd>
+<a href="$project.url" id="project.url">Project URL</a>&nbsp;-&nbsp;
+<a href="$project.scm.url" id="project.scm.url">SCM</a>&nbsp;-&nbsp;
+<a href="$project.issueManagement.url" id="project.issueManagement.url">Issues</a>
+<dd>
+#developersOrContributors( "Developers" $project.developers )
+#developersOrContributors( "Contributors" $project.contributors )
+</dl>
