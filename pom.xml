@@ -5,9 +5,9 @@
     <artifactId>foss-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>foss parent pom for 1&amp;1 projects</name>
+    <name>foss parent pom for 1-and-1 projects</name>
     
-    <description>Parent POM for 1&amp;1 open source projects</description>
+    <description>Parent POM for 1-and-1 open source projects.</description>
 
     <url>https://github.com/1and1/${project.artifactId}/</url>
 
@@ -24,7 +24,7 @@
     </prerequisites>
     <ciManagement>
         <system>Jenkins</system>
-        <url>http://huschteguzzel.de/hudson/job/${project.artifactId}/</url>
+        <url>http://huschteguzzel.de/hudson/job/oneandone-${project.artifactId}/</url>
     </ciManagement>
 
     <scm>
@@ -34,10 +34,14 @@
     </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven-surefire-plugin.version>2.12</maven-surefire-plugin.version>
-        <maven-checkstyle-plugin.version>2.9.1</maven-checkstyle-plugin.version>
         <maven-pmd-plugin.version>2.7.1</maven-pmd-plugin.version>
         <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
+        <maven-surefire-plugin.version>2.12</maven-surefire-plugin.version>
+        <maven-checkstyle-plugin.version>2.9.1</maven-checkstyle-plugin.version>
+        <maven-checkstyle-plugin.configLocation>/net/oneandone/fossconfigs/checkstyle-ruleset.xml</maven-checkstyle-plugin.configLocation>
+        <maven-checkstyle-plugin.suppressionsLocation>/net/oneandone/fossconfigs/checkstyle-suppressions.xml</maven-checkstyle-plugin.suppressionsLocation>
+        <findbugs-maven-plugin.version>2.4.0</findbugs-maven-plugin.version>
+        <findbugs-maven-plugin.excludeFilterFile>/net/oneandone/fossconfigs/findbugs-exclude.xml</findbugs-maven-plugin.excludeFilterFile>
         <oneandone.java.source>1.6</oneandone.java.source>
         <oneandone.java.target>1.6</oneandone.java.target>
     </properties>
@@ -77,7 +81,7 @@
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/1and1/testlink-junit/issues/?labels=${project.artifactId}&amp;sort=created&amp;state=open</url>
+        <url>https://github.com/1and1/${project.artifactId}/issues/?sort=created&amp;state=open</url>
     </issueManagement>
 
     <developers>
@@ -300,35 +304,49 @@
                         </execution>
                     </executions>
                 </plugin>
-                <plugin>
+                <!--plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
                     <version>${maven-checkstyle-plugin.version}</version>
                     <configuration>
                         <enableRulesSummary>false</enableRulesSummary>
-                        <configLocation>${user.dir}/src/conf/checkstyle-ruleset.xml</configLocation>
-                        <suppressionsLocation>${user.dir}/src/conf/checkstyle-suppressions.xml</suppressionsLocation>
+                        <configLocation>${maven-checkstyle-plugin.configLocation}</configLocation>
+                        <suppressionsLocation>${maven-checkstyle-plugin.suppressionsLocation}</suppressionsLocation>
                     </configuration>
-                </plugin>
+                    <dependencies>
+                        <dependency>
+                            <groupId>net.oneandone</groupId>
+                            <artifactId>foss-configs</artifactId>
+                            <version>1.0-SNAPSHOT</version>
+                        </dependency>
+                    </dependencies>
+                </plugin-->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>findbugs-maven-plugin</artifactId>
-                    <version>2.4.0</version>
+                    <version>${findbugs-maven-plugin.version}</version>
                     <configuration>
-                        <excludeFilterFile>${user.dir}/src/conf/findbugs-exclude.xml</excludeFilterFile>
+                        <excludeFilterFile>${findbugs-maven-plugin.excludeFilterFile}</excludeFilterFile>
                         <xmlOutput>true</xmlOutput>
                         <threshold>Low</threshold>
                         <effort>Max</effort>
                         <debug>false</debug>
                         <relaxed>false</relaxed>
                     </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>net.oneandone</groupId>
+                            <artifactId>foss-configs</artifactId>
+                            <version>1.0-SNAPSHOT</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>net.rumati.maven.plugins</groupId>
                     <artifactId>velocity-maven-plugin</artifactId>
                     <version>0.2.0</version>
                     <configuration>
-                        <template>${user.dir}/src/conf/jenkins-description.html.vm</template>
+                        <template>/net/oneandone/fossconfigs/jenkins-description.html.vm</template>
                         <outputFile>target/jenkins-description.html</outputFile>
                     </configuration>
                     <executions>
@@ -339,31 +357,33 @@
                             </goals>
                         </execution>
                     </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>net.oneandone</groupId>
+                            <artifactId>foss-configs</artifactId>
+                            <version>1.0-SNAPSHOT</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <version>1.7</version>
-                <executions>
-                    <execution>
-                        <inherited>false</inherited>
-                        <goals>
-                            <goal>attach-artifact</goal>
-                        </goals>
-                        <configuration>
-                            <artifacts>
-                                <artifact>
-                                    <file>src/conf/checkstyle-ruleset.xml</file>
-                                    <type>xml</type>
-                                    <classifier>checkstyle-ruleset</classifier>
-                                </artifact>
-                            </artifacts>
-                        </configuration>
-                    </execution>
-                </executions>
+            <plugin><!-- putting this into pluginManagement does not work, report does not find config -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${maven-checkstyle-plugin.version}</version>
+                <configuration>
+                    <enableRulesSummary>false</enableRulesSummary>
+                    <configLocation>${maven-checkstyle-plugin.configLocation}</configLocation>
+                    <suppressionsLocation>${maven-checkstyle-plugin.suppressionsLocation}</suppressionsLocation>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.oneandone</groupId>
+                        <artifactId>foss-configs</artifactId>
+                        <version>1.0-SNAPSHOT</version>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
                 <groupId>net.rumati.maven.plugins</groupId>
@@ -414,8 +434,8 @@
                 <version>${maven-checkstyle-plugin.version}</version>
                 <configuration>
                     <enableRulesSummary>false</enableRulesSummary>
-                    <configLocation>${user.dir}/src/conf/checkstyle-ruleset.xml</configLocation>
-                    <suppressionsLocation>${user.dir}/src/conf/checkstyle-suppressions.xml</suppressionsLocation>
+                    <configLocation>net/oneandone/fossconfigs/checkstyle-ruleset.xml</configLocation>
+                    <suppressionsLocation>net/oneandone/fossconfigs/checkstyle-suppressions.xml</suppressionsLocation>
                 </configuration>
             </plugin>
             <plugin>
@@ -426,7 +446,7 @@
                     <linkXRef>true</linkXRef>
                     <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
                     <minimumTokens>100</minimumTokens>
-                    <targetJdk>1.6</targetJdk>
+                    <targetJdk>${oneandone.java.target}</targetJdk>
                 </configuration>
             </plugin>
             <plugin>
@@ -466,9 +486,9 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
-                <version>2.4.0</version>
+                <version>${findbugs-maven-plugin.version}</version>
                 <configuration>
-                    <excludeFilterFile>${user.dir}/src/conf/findbugs-exclude.xml</excludeFilterFile>
+                    <excludeFilterFile>net/oneandone/fossconfigs/findbugs-exclude.xml</excludeFilterFile>
                     <xmlOutput>true</xmlOutput>
                     <threshold>Low</threshold>
                     <effort>Max</effort>
@@ -483,4 +503,7 @@
             </plugin>
         </plugins>
     </reporting>
+    <modules>
+        <module>configs</module>
+    </modules>
 </project>
