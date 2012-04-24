@@ -81,7 +81,7 @@
     </issueManagement>
     <ciManagement>
         <system>hudson</system>
-        <url>http://huschteguzzel.de/hudson/job/oneandone-foss-parent/</url>
+        <url>http://huschteguzzel.de/hudson/job/oneandone-${project.artifactId}/</url>
     </ciManagement>
     <developers>
         <developer>
