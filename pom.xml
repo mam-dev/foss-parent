@@ -320,13 +320,6 @@
                         <debug>false</debug>
                         <relaxed>false</relaxed>
                     </configuration>
-                    <dependencies>
-                        <dependency>
-                            <groupId>net.oneandone</groupId>
-                            <artifactId>foss-configs</artifactId>
-                            <version>1.0-SNAPSHOT</version>
-                        </dependency>
-                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>net.rumati.maven.plugins</groupId>
