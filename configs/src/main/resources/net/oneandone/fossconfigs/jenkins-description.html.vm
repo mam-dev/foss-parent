@@ -36,11 +36,11 @@
 #macro ( gavSpan $p $id )
 <span id="$id">$p.groupId:$p.artifactId:$p.version<span>
 #end
+<!-- automatically created by velocity-maven-plugin foss-parent-create-jenkins-description -->
+<p class="project.description">$project.description</p>
 <dl>
 <dt><b>GAV:</b></dt>
 <dd>#gavSpan($project "gav")#parentGAV()</dd>
-<dt><b>Description:</b></dt>
-<dd id="project.description">$project.description</dd>
 <dt><b>Links:</b></dt>
 <dd>
 <a href="$project.url" id="project.url">Project URL</a>&nbsp;-&nbsp;
