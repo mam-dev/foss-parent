@@ -106,7 +106,7 @@
         <url>https://github.com/1and1/${project.artifactId}/issues/?sort=created&amp;state=open</url>
     </issueManagement>
     <ciManagement>
-        <system>hudson</system>
+        <system>Jenkins</system>
         <url>http://huschteguzzel.de/hudson/job/oneandone-${project.artifactId}/</url>
     </ciManagement>
     <developers>
