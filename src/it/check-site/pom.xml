@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>net.oneandone</groupId>
+        <artifactId>foss-parent</artifactId>
+        <version>@project.version@</version>
+    </parent>
+    <artifactId>sample-project</artifactId>
+    <name>sample project for site generation</name>
+    
+    <description>Integration Test Project</description>
+
+    <url>https://github.com/1and1/${project.artifactId}/</url>
+
+    <organization>
+        <name>1&amp;1</name>
+        <url>https://1and1.github.com/</url>
+    </organization>
+
+
+    <inceptionYear>2012</inceptionYear>
+    <scm>
+        <connection>scm:git:git://github.com/1and1/${project.artifactId}.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/1and1/${project.artifactId}.git</developerConnection>
+        <url>https://github.com/1and1/${project.artifactId}/</url>
+    </scm>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
+    <developers>
+        <developer>
+            <id>mifr</id>
+            <name>Mirko Friedenhagen</name>
+            <email>mirko.friedenhagen@1und1.de</email>
+            <organization>1 &amp; 1 Internet AG</organization>
+            <organizationUrl>${project.url}</organizationUrl>
+            <url>http://github.com/mfriedenhagen/</url>
+            <timezone>+1</timezone>
+            <roles>
+                <role>developer</role>
+                <role>project lead</role>
+            </roles>
+        </developer>
+    </developers>
+</project>
