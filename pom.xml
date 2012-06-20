@@ -260,6 +260,10 @@
                             <goals>
                                 <goal>create</goal>
                             </goals>
+                            <configuration>
+                                <!-- Needed when no SCM configuration is given. -->
+                                <revisionOnScmFailure>UNKNOW_REVISION</revisionOnScmFailure>
+                            </configuration>
                         </execution>
                     </executions>
                 </plugin>
