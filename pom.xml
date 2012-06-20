@@ -30,22 +30,22 @@
     </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven-changes-plugin.version>2.7</maven-changes-plugin.version>
+        <maven-changes-plugin.version>2.7.1</maven-changes-plugin.version>
         <maven-checkstyle-plugin.version>2.9.1</maven-checkstyle-plugin.version>
         <maven-checkstyle-plugin.configLocation>/net/oneandone/fossconfigs/checkstyle-ruleset.xml</maven-checkstyle-plugin.configLocation>
         <maven-checkstyle-plugin.suppressionsLocation>/net/oneandone/fossconfigs/checkstyle-suppressions.xml</maven-checkstyle-plugin.suppressionsLocation>
-        <maven-compiler-plugin.version>2.4</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>2.5.1</maven-compiler-plugin.version>
         <maven-pmd-plugin.version>2.7.1</maven-pmd-plugin.version>
         <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
         <maven-scm-plugin.version>1.7</maven-scm-plugin.version>
         <maven-site-plugin.version>3.1</maven-site-plugin.version>
         <maven-surefire-plugin.version>2.12</maven-surefire-plugin.version>
         <cobertura-maven-plugin.version>2.5.1</cobertura-maven-plugin.version>
-        <findbugs-maven-plugin.version>2.4.0</findbugs-maven-plugin.version>
+        <findbugs-maven-plugin.version>2.5</findbugs-maven-plugin.version>
         <findbugs-maven-plugin.excludeFilterFile>/net/oneandone/fossconfigs/findbugs-exclude.xml</findbugs-maven-plugin.excludeFilterFile>
         <org.joda.version>0.6</org.joda.version>
         <joda-time.version>2.1</joda-time.version>
-        <org.slf4j.version>1.6.4</org.slf4j.version>
+        <org.slf4j.version>1.6.6</org.slf4j.version>
         <oneandone.java.source>1.6</oneandone.java.source>
         <oneandone.java.target>1.6</oneandone.java.target>
     </properties>
@@ -158,14 +158,14 @@
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
-                <version>1.0.3</version>
+                <version>1.0.6</version>
                 <!-- set to test as libraries should not include this -->
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-core</artifactId>
-                <version>1.0.3</version>
+                <version>1.0.6</version>
                 <!-- set to test as libraries should not include this -->
                 <scope>test</scope>
             </dependency>
@@ -195,7 +195,7 @@
             <dependency>
                 <groupId>org.apache.maven.scm</groupId>
                 <artifactId>maven-scm</artifactId>
-                <version>1.6</version>
+                <version>1.7</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
