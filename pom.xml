@@ -635,7 +635,7 @@
                 <artifactId>findbugs-maven-plugin</artifactId>
                 <version>${findbugs-maven-plugin.version}</version>
                 <configuration>
-                    <excludeFilterFile>net/oneandone/fossconfigs/findbugs-exclude.xml</excludeFilterFile>
+                    <excludeFilterFile>${findbugs-maven-plugin.excludeFilterFile}</excludeFilterFile>
                     <xmlOutput>true</xmlOutput>
                     <threshold>Low</threshold>
                     <effort>Max</effort>
