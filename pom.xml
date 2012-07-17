@@ -582,8 +582,8 @@
                 <configuration>
                     <outputFileFormat>xml</outputFileFormat>
                     <enableRulesSummary>false</enableRulesSummary>
-                    <configLocation>net/oneandone/fossconfigs/checkstyle-ruleset.xml</configLocation>
-                    <suppressionsLocation>net/oneandone/fossconfigs/checkstyle-suppressions.xml</suppressionsLocation>
+                    <configLocation>${maven-checkstyle-plugin.configLocation}</configLocation>
+                    <suppressionsLocation>${maven-checkstyle-plugin.suppressionsLocation}</suppressionsLocation>
                 </configuration>
             </plugin>
             <plugin>
