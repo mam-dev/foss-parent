@@ -30,6 +30,7 @@
     </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven-changes-plugin.version>2.7.1</maven-changes-plugin.version>
         <maven-checkstyle-plugin.version>2.9.1</maven-checkstyle-plugin.version>
         <maven-checkstyle-plugin.configLocation>/net/oneandone/fossconfigs/checkstyle-ruleset.xml</maven-checkstyle-plugin.configLocation>
