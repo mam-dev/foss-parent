@@ -46,6 +46,8 @@
         <org.joda.version>0.6</org.joda.version>
         <joda-time.version>2.1</joda-time.version>
         <org.slf4j.version>1.6.6</org.slf4j.version>
+        <guava.version>12.0</guava.version>
+        <gson.version>2.2.1</gson.version>
         <oneandone.java.source>1.6</oneandone.java.source>
         <oneandone.java.target>1.6</oneandone.java.target>
         <netbeans.checkstyle.format>true</netbeans.checkstyle.format>
@@ -197,6 +199,18 @@
                 <groupId>org.apache.maven.scm</groupId>
                 <artifactId>maven-scm</artifactId>
                 <version>1.7</version>
+            </dependency>
+            
+            <!-- Google libraries -->
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
