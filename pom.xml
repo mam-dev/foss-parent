@@ -534,6 +534,17 @@
                     <artifactId>plexus-component-metadata</artifactId>
                     <version>1.5.5</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-pmd-plugin</artifactId>
+                    <version>${maven-pmd-plugin.version}</version>
+                    <configuration>
+                        <linkXRef>true</linkXRef>
+                        <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+                        <minimumTokens>100</minimumTokens>
+                        <targetJdk>${oneandone.java.target}</targetJdk>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
