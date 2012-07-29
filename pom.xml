@@ -31,29 +31,29 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven-antrun-plugin.version>1.3</maven-antrun-plugin.version>
+        <maven-antrun-plugin.version>1.7</maven-antrun-plugin.version>
         <maven-changes-plugin.version>2.7.1</maven-changes-plugin.version>
         <maven-checkstyle-plugin.version>2.9.1</maven-checkstyle-plugin.version>
         <maven-checkstyle-plugin.configLocation>/net/oneandone/fossconfigs/checkstyle-ruleset.xml</maven-checkstyle-plugin.configLocation>
         <maven-checkstyle-plugin.suppressionsLocation>/net/oneandone/fossconfigs/checkstyle-suppressions.xml</maven-checkstyle-plugin.suppressionsLocation>
-        <maven-clean-plugin.version>2.4.1</maven-clean-plugin.version>
+        <maven-clean-plugin.version>2.5</maven-clean-plugin.version>
         <maven-compiler-plugin.version>2.5.1</maven-compiler-plugin.version>
         <maven-deploy-plugin.version>2.7</maven-deploy-plugin.version>
-        <maven-enforcer-plugin.version>1.0.1</maven-enforcer-plugin.version>
+        <maven-enforcer-plugin.version>1.1.1</maven-enforcer-plugin.version>
         <maven-failsafe-plugin.version>2.12</maven-failsafe-plugin.version>
-        <maven-invoker-plugin.version>1.5</maven-invoker-plugin.version>
+        <maven-invoker-plugin.version>1.6</maven-invoker-plugin.version>
         <maven-install-plugin.version>2.3.1</maven-install-plugin.version>
         <maven-pmd-plugin.version>2.7.1</maven-pmd-plugin.version>
-        <maven-plugin-plugin.version>2.9</maven-plugin-plugin.version>
+        <maven-plugin-plugin.version>3.1</maven-plugin-plugin.version>
         <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
         <maven-javadoc-plugin.version>2.8.1</maven-javadoc-plugin.version>
-        <maven-release-plugin.version>2.2.2</maven-release-plugin.version>
+        <maven-release-plugin.version>2.3.2</maven-release-plugin.version>
         <maven-resources-plugin.version>2.5</maven-resources-plugin.version>
         <maven-scm-plugin.version>1.7</maven-scm-plugin.version>
         <maven-site-plugin.version>3.1</maven-site-plugin.version>
         <maven-source-plugin.version>2.1.2</maven-source-plugin.version>
         <maven-surefire-plugin.version>2.12</maven-surefire-plugin.version>
-        <buildnumber-maven-plugin.version>1.0</buildnumber-maven-plugin.version>
+        <buildnumber-maven-plugin.version>1.1</buildnumber-maven-plugin.version>
         <cobertura-maven-plugin.version>2.5.1</cobertura-maven-plugin.version>
         <findbugs-maven-plugin.version>2.5.1</findbugs-maven-plugin.version>
         <findbugs-maven-plugin.excludeFilterFile>net/oneandone/fossconfigs/findbugs-exclude.xml</findbugs-maven-plugin.excludeFilterFile>
