@@ -16,3 +16,8 @@ Usage Tips:
   to your settings.xml and run
 
      mvn site com.github.github:site-maven-plugin:site
+
+* adjust license headers:
+
+     mvn com.mycila.maven-license-plugin:maven-license-plugin:format
+

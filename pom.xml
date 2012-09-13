@@ -56,6 +56,7 @@
         <maven-site-plugin.version>3.1</maven-site-plugin.version>
         <maven-source-plugin.version>2.1.2</maven-source-plugin.version>
         <maven-surefire-plugin.version>2.12.3</maven-surefire-plugin.version>
+        <maven-license-plugin.version>1.9.0</maven-license-plugin.version>
         <buildnumber-maven-plugin.version>1.1</buildnumber-maven-plugin.version>
         <cobertura-maven-plugin.version>2.5.1</cobertura-maven-plugin.version>
         <findbugs-maven-plugin.version>2.5.1</findbugs-maven-plugin.version>
@@ -300,6 +301,18 @@
                     <configuration>
                         <source>${oneandone.java.source}</source>
                         <target>${oneandone.java.target}</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>com.mycila.maven-license-plugin</groupId>
+                    <artifactId>maven-license-plugin</artifactId>
+                    <version>${maven-license-plugin.version}</version>
+                    <configuration>
+                      <header>https://raw.github.com/mlhartme/foss-parent/master/src/header.txt</header>
+                      <strictCheck>true</strictCheck>
+                      <includes>
+                        <include>src/**/*.java</include>
+                      </includes>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -776,6 +789,17 @@
                                 <phase>verify</phase>
                                 <goals>
                                     <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>com.mycila.maven-license-plugin</groupId>
+                        <artifactId>maven-license-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>check</goal>
                                 </goals>
                             </execution>
                         </executions>
