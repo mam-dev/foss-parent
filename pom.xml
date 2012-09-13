@@ -55,7 +55,7 @@
         <maven-scm-plugin.version>1.7</maven-scm-plugin.version>
         <maven-site-plugin.version>3.1</maven-site-plugin.version>
         <maven-source-plugin.version>2.1.2</maven-source-plugin.version>
-        <maven-surefire-plugin.version>2.12</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>2.12.3</maven-surefire-plugin.version>
         <buildnumber-maven-plugin.version>1.1</buildnumber-maven-plugin.version>
         <cobertura-maven-plugin.version>2.5.1</cobertura-maven-plugin.version>
         <findbugs-maven-plugin.version>2.5.1</findbugs-maven-plugin.version>
