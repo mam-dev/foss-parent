@@ -45,7 +45,7 @@
         <maven-failsafe-plugin.version>2.12</maven-failsafe-plugin.version>
         <maven-gpg-plugin.version>1.4</maven-gpg-plugin.version>
         <maven-invoker-plugin.version>1.6</maven-invoker-plugin.version>
-        <maven-install-plugin.version>2.3.1</maven-install-plugin.version>
+        <maven-install-plugin.version>2.4</maven-install-plugin.version>
         <maven-pmd-plugin.version>2.7.1</maven-pmd-plugin.version>
         <maven-plugin-plugin.version>3.1</maven-plugin-plugin.version>
         <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
