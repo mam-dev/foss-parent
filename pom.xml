@@ -24,8 +24,8 @@
     </prerequisites>
 
     <scm>
-        <connection>scm:git:https://github.com/1and1/${project.artifactId}.git</connection>
-        <developerConnection>scm:git:https://github.com/1and1/${project.artifactId}.git</developerConnection>
+        <connection>scm:git:git://github.com/1and1/${project.artifactId}.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/1and1/${project.artifactId}.git</developerConnection>
         <url>https://github.com/1and1/${project.artifactId}/</url>
     </scm>
     <properties>
