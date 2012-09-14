@@ -24,8 +24,8 @@
     </prerequisites>
 
     <scm>
-        <connection>scm:git:https://github.com/1and1/${project.artifactId}.git</connection>
-        <developerConnection>scm:git:https://github.com/1and1/${project.artifactId}.git</developerConnection>
+        <connection>scm:git:git://github.com/1and1/${project.artifactId}.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/1and1/${project.artifactId}.git</developerConnection>
         <url>https://github.com/1and1/${project.artifactId}/</url>
     </scm>
     <properties>
@@ -496,8 +496,8 @@
                             <requireProperty>
                                 <property>project.scm.developerConnection</property>
                                 <message>"project.scm.developerConnection must be specified."</message>
-                                <regex>scm:git:https://github.com/.*$</regex>
-                                <regexMessage>"project.scm.developerConnection must start with scm:git:https://github.com/"</regexMessage>
+                                <regex>scm:git:ssh://git@github.com/.*$</regex>
+                                <regexMessage>"project.scm.developerConnection must start with scm:git:ssh://git@github.com/"</regexMessage>
                             </requireProperty>
                             <DependencyConvergence />
                         </rules>
