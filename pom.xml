@@ -308,7 +308,7 @@
                     <artifactId>maven-license-plugin</artifactId>
                     <version>${maven-license-plugin.version}</version>
                     <configuration>
-                      <header>https://raw.github.com/mlhartme/foss-parent/master/src/header.txt</header>
+                      <header>https://raw.github.com/1and1/foss-parent/master/src/header.txt</header>
                       <strictCheck>true</strictCheck>
                       <includes>
                         <include>src/**/*.java</include>
