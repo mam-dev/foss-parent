@@ -263,7 +263,7 @@
             </roles>
         </developer>
         <developer>
-            <id>mifr</id>
+            <id>mlhartme</id>
             <name>Michael Hartmeier</name>
             <organization>1 &amp; 1 Internet AG</organization>
             <organizationUrl>${project.url}</organizationUrl>
