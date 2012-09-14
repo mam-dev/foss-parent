@@ -496,8 +496,8 @@
                             <requireProperty>
                                 <property>project.scm.developerConnection</property>
                                 <message>"project.scm.developerConnection must be specified."</message>
-                                <regex>scm:git:https://github.com/.*$</regex>
-                                <regexMessage>"project.scm.developerConnection must start with scm:git:https://github.com/"</regexMessage>
+                                <regex>scm:git:ssh://git@github.com/.*$</regex>
+                                <regexMessage>"project.scm.developerConnection must start with scm:git:ssh://git@github.com/"</regexMessage>
                             </requireProperty>
                             <DependencyConvergence />
                         </rules>
