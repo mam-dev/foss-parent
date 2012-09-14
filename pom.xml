@@ -253,7 +253,6 @@
         <developer>
             <id>mifr</id>
             <name>Mirko Friedenhagen</name>
-            <email>mirko.friedenhagen@1und1.de</email>
             <organization>1 &amp; 1 Internet AG</organization>
             <organizationUrl>${project.url}</organizationUrl>
             <url>http://github.com/mfriedenhagen/</url>
@@ -261,6 +260,17 @@
             <roles>
                 <role>developer</role>
                 <role>project lead</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>mifr</id>
+            <name>Michael Hartmeier</name>
+            <organization>1 &amp; 1 Internet AG</organization>
+            <organizationUrl>${project.url}</organizationUrl>
+            <url>http://github.com/mlhartme/</url>
+            <timezone>+1</timezone>
+            <roles>
+                <role>developer</role>
             </roles>
         </developer>
     </developers>
