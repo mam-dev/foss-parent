@@ -1,15 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>net.oneandone</groupId>
+    <groupId>net.oneandone.maven.poms</groupId>
     <artifactId>foss-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>foss parent pom for 1-and-1 projects</name>
-    
+
     <description>Parent POM for 1-and-1 open source projects.</description>
 
-    <url>https://github.com/1and1/${project.artifactId}/</url>
+    <url>https://github.com/1and1/foss-parent</url>
 
     <organization>
         <name>1&amp;1</name>
@@ -33,6 +33,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven-antrun-plugin.version>1.7</maven-antrun-plugin.version>
         <maven-assembly-plugin.version>2.3</maven-assembly-plugin.version>
+        <maven-changelog-plugin.version>2.2</maven-changelog-plugin.version>
         <maven-changes-plugin.version>2.7.1</maven-changes-plugin.version>
         <maven-checkstyle-plugin.version>2.9.1</maven-checkstyle-plugin.version>
         <maven-checkstyle-plugin.configLocation>/net/oneandone/fossconfigs/checkstyle-ruleset.xml</maven-checkstyle-plugin.configLocation>
@@ -50,12 +51,15 @@
         <maven-plugin-plugin.version>3.1</maven-plugin-plugin.version>
         <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
         <maven-javadoc-plugin.version>2.8.1</maven-javadoc-plugin.version>
+        <maven-jxr-plugin.version>2.3</maven-jxr-plugin.version>
+        <maven-project-info-reports-plugin.version>2.5.1</maven-project-info-reports-plugin.version>
         <maven-release-plugin.version>2.3.2</maven-release-plugin.version>
         <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
-        <maven-scm-plugin.version>1.8</maven-scm-plugin.version>
         <maven-site-plugin.version>3.1</maven-site-plugin.version>
+        <maven-scm-plugin.version>1.8</maven-scm-plugin.version>
         <maven-source-plugin.version>2.2</maven-source-plugin.version>
         <maven-surefire-plugin.version>2.12.3</maven-surefire-plugin.version>
+        <maven-license-plugin.version>1.9.0</maven-license-plugin.version>
         <buildnumber-maven-plugin.version>1.1</buildnumber-maven-plugin.version>
         <cobertura-maven-plugin.version>2.5.1</cobertura-maven-plugin.version>
         <findbugs-maven-plugin.version>2.5.2</findbugs-maven-plugin.version>
@@ -71,6 +75,8 @@
         <oneandone.java.source>1.6</oneandone.java.source>
         <oneandone.java.target>1.6</oneandone.java.target>
         <netbeans.checkstyle.format>true</netbeans.checkstyle.format>
+        <github-site-plugin.version>0.7</github-site-plugin.version>
+        <github.global.server>github</github.global.server>
     </properties>
 
     <licenses>
@@ -220,7 +226,7 @@
                 <artifactId>maven-scm</artifactId>
                 <version>1.8</version>
             </dependency>
-            
+
             <!-- Google libraries -->
             <dependency>
                 <groupId>com.google.code.gson</groupId>
@@ -247,7 +253,6 @@
         <developer>
             <id>mifr</id>
             <name>Mirko Friedenhagen</name>
-            <email>mirko.friedenhagen@1und1.de</email>
             <organization>1 &amp; 1 Internet AG</organization>
             <organizationUrl>${project.url}</organizationUrl>
             <url>http://github.com/mfriedenhagen/</url>
@@ -255,6 +260,17 @@
             <roles>
                 <role>developer</role>
                 <role>project lead</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>mlhartme</id>
+            <name>Michael Hartmeier</name>
+            <organization>1 &amp; 1 Internet AG</organization>
+            <organizationUrl>${project.url}</organizationUrl>
+            <url>http://github.com/mlhartme/</url>
+            <timezone>+1</timezone>
+            <roles>
+                <role>developer</role>
             </roles>
         </developer>
     </developers>
@@ -298,6 +314,18 @@
                     <configuration>
                         <source>${oneandone.java.source}</source>
                         <target>${oneandone.java.target}</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>com.mycila.maven-license-plugin</groupId>
+                    <artifactId>maven-license-plugin</artifactId>
+                    <version>${maven-license-plugin.version}</version>
+                    <configuration>
+                      <header>https://raw.github.com/1and1/foss-parent/master/src/header.txt</header>
+                      <strictCheck>true</strictCheck>
+                      <includes>
+                        <include>src/**/*.java</include>
+                      </includes>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -468,8 +496,8 @@
                             <requireProperty>
                                 <property>project.scm.developerConnection</property>
                                 <message>"project.scm.developerConnection must be specified."</message>
-                                <regex>scm:git:ssh://git@github.com/1and1/.*$</regex>
-                                <regexMessage>"project.scm.developerConnection must start with scm:git:ssh://git@github.com/1and1/"</regexMessage>
+                                <regex>scm:git:ssh://git@github.com/.*$</regex>
+                                <regexMessage>"project.scm.developerConnection must start with scm:git:ssh://git@github.com/"</regexMessage>
                             </requireProperty>
                             <DependencyConvergence />
                         </rules>
@@ -545,7 +573,7 @@
                     <configuration>
                         <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
                         <showErrors>true</showErrors>
-                        <streamLogs>true</streamLogs>                        
+                        <streamLogs>true</streamLogs>
                         <postBuildHookScript>verify</postBuildHookScript>
                         <addTestClassPath>true</addTestClassPath>
                     </configuration>
@@ -577,6 +605,14 @@
                         <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
                         <minimumTokens>100</minimumTokens>
                         <targetJdk>${oneandone.java.target}</targetJdk>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>com.github.github</groupId>
+                    <artifactId>site-maven-plugin</artifactId>
+                    <version>${github-site-plugin.version}</version>
+                    <configuration>
+                        <message>Creating site for ${project.version}</message>
                     </configuration>
                 </plugin>
             </plugins>
@@ -649,18 +685,23 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>2.4</version>
+                <version>${maven-project-info-reports-plugin.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jxr-plugin</artifactId>
-                <version>2.3</version>
+                <version>${maven-jxr-plugin.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-changes-plugin</artifactId>
                 <version>${maven-changes-plugin.version}</version>
             </plugin>
+            <!--plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-changelog-plugin</artifactId>
+              <version>${maven-changelog-plugin.version}</version>
+            </plugin-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
@@ -686,7 +727,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.8.1</version>
+                <version>${maven-javadoc-plugin.version}</version>
                 <configuration>
                     <quiet>true</quiet>
                     <links>
@@ -761,6 +802,17 @@
                                 <phase>verify</phase>
                                 <goals>
                                     <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>com.mycila.maven-license-plugin</groupId>
+                        <artifactId>maven-license-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>check</goal>
                                 </goals>
                             </execution>
                         </executions>

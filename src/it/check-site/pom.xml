@@ -2,13 +2,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>net.oneandone</groupId>
-        <artifactId>foss-parent</artifactId>
+        <groupId>@project.groupId@</groupId>
+        <artifactId>@project.artifactId@</artifactId>
         <version>@project.version@</version>
     </parent>
     <artifactId>sample-project</artifactId>
     <name>sample project for site generation</name>
-    
+
     <description>Integration Test Project</description>
 
     <url>https://github.com/1and1/${project.artifactId}/</url>
@@ -35,7 +35,6 @@
         <developer>
             <id>mifr</id>
             <name>Mirko Friedenhagen</name>
-            <email>mirko.friedenhagen@1und1.de</email>
             <organization>1 &amp; 1 Internet AG</organization>
             <organizationUrl>${project.url}</organizationUrl>
             <url>http://github.com/mfriedenhagen/</url>
