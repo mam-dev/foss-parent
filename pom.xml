@@ -488,6 +488,9 @@
                             <requireMavenVersion>
                                 <version>[3.0.3,)</version>
                             </requireMavenVersion>
+                            <requireJavaVersion>
+                                <version>1.5</version>
+                            </requireJavaVersion>
                             <requireReleaseDeps>
                                 <onlyWhenRelease>true</onlyWhenRelease>
                                 <message>No Snapshots Allowed!</message>
