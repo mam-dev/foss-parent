@@ -24,9 +24,9 @@
     </prerequisites>
 
     <scm>
-        <connection>scm:git:git://github.com/1and1/${project.artifactId}.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/1and1/${project.artifactId}.git</developerConnection>
-        <url>https://github.com/1and1/${project.artifactId}/</url>
+        <connection>scm:git:git://github.com/1and1/foss-parent.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/1and1/foss-parent.git</developerConnection>
+        <url>https://github.com/1and1/foss-parent/</url>
     </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
