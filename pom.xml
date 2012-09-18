@@ -560,7 +560,7 @@
                     </executions>
                     <dependencies>
                         <dependency>
-                            <groupId>net.oneandone</groupId>
+                            <groupId>net.oneandone.maven.poms</groupId>
                             <artifactId>foss-configs</artifactId>
                             <version>1.0-SNAPSHOT</version>
                         </dependency>
@@ -629,7 +629,7 @@
                 </configuration>
                 <dependencies>
                     <dependency>
-                        <groupId>net.oneandone</groupId>
+                        <groupId>net.oneandone.maven.poms</groupId>
                         <artifactId>foss-configs</artifactId>
                         <version>1.0-SNAPSHOT</version>
                     </dependency>
@@ -674,7 +674,7 @@
         </plugins>
         <extensions>
             <extension><!-- needed for findbugs -->
-                <groupId>net.oneandone</groupId>
+                <groupId>net.oneandone.maven.poms</groupId>
                 <artifactId>foss-configs</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </extension>
@@ -778,9 +778,6 @@
             </plugin>
         </plugins>
     </reporting>
-    <modules>
-        <module>configs</module>
-    </modules>
     <profiles>
         <profile>
             <id>release-sign-artifacts</id>

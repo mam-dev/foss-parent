@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>net.oneandone</groupId>
+    <groupId>net.oneandone.maven.poms</groupId>
     <artifactId>foss-configs</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>Configurations of foss parent pom for 1-and-1 projects</name>
-    
+
     <description>Configurations of foss parent pom for 1-and-1 projects</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -17,6 +17,11 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+    <scm>
+        <connection>scm:git:git://github.com/1and1/foss-parent.git/configs</connection>
+        <developerConnection>scm:git:ssh://git@github.com/1and1/foss-parent.git/configs</developerConnection>
+        <url>https://github.com/1and1/foss-parent/configs/</url>
+    </scm>
 
     <profiles>
         <profile>
