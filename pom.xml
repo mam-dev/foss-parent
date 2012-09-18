@@ -1,9 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.oneandone.maven.poms</groupId>
     <artifactId>foss-parent</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>pom</packaging>
     <name>foss parent pom for 1-and-1 projects</name>
 
@@ -27,7 +26,8 @@
         <connection>scm:git:git://github.com/1and1/foss-parent.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/1and1/foss-parent.git</developerConnection>
         <url>https://github.com/1and1/foss-parent/</url>
-    </scm>
+      <tag>foss-parent-1.0</tag>
+  </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -332,7 +332,7 @@
                       <dependency>
                           <groupId>net.oneandone.maven.poms</groupId>
                           <artifactId>foss-configs</artifactId>
-                          <version>1.0-SNAPSHOT</version>
+                          <version>1.0</version>
                       </dependency>
                     </dependencies>
                 </plugin>
@@ -492,7 +492,7 @@
                             <requireJavaVersion>
                                 <version>1.5</version>
                             </requireJavaVersion>
-                            <requireNoRepositories/>
+                            <requireNoRepositories />
                             <requireReleaseDeps>
                                 <onlyWhenRelease>true</onlyWhenRelease>
                                 <message>No Snapshots Allowed!</message>
@@ -574,7 +574,7 @@
                         <dependency>
                             <groupId>net.oneandone.maven.poms</groupId>
                             <artifactId>foss-configs</artifactId>
-                            <version>1.0-SNAPSHOT</version>
+                            <version>1.0</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -643,7 +643,7 @@
                     <dependency>
                         <groupId>net.oneandone.maven.poms</groupId>
                         <artifactId>foss-configs</artifactId>
-                        <version>1.0-SNAPSHOT</version>
+                        <version>1.0</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -688,7 +688,7 @@
             <extension><!-- needed for findbugs -->
                 <groupId>net.oneandone.maven.poms</groupId>
                 <artifactId>foss-configs</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>1.0</version>
             </extension>
         </extensions>
     </build>
