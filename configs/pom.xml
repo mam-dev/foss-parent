@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.oneandone.maven.poms</groupId>
     <artifactId>foss-configs</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <name>Configurations of foss parent pom for 1-and-1 projects</name>
 
     <description>Configurations of foss parent pom for 1-and-1 projects</description>
