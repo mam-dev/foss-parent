@@ -48,10 +48,11 @@ Releasing the configurations
 
 As the configurations are a seperate project, they have to released seperately. To do this execute the following
 
-> cd configs
-> mvn release:prepare
-> mvn release:perform -Dgoals='-f configs/pom.xml -Dgpg.keyname=YOUR_KEYNAME -Dgpg.passphrase="YOUR_PASSPHRASE" deploy'
-
+```
+cd configs
+mvn release:prepare
+mvn release:perform -Dgoals='-f configs/pom.xml -Dgpg.keyname=YOUR_KEYNAME -Dgpg.passphrase="YOUR_PASSPHRASE" deploy'
+```
 
 Deploy site to github
 ---------------------
