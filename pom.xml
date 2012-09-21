@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.oneandone.maven.poms</groupId>
     <artifactId>foss-parent</artifactId>
-    <version>1.1.3</version>
+    <version>1.2-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>foss parent pom for 1-and-1 projects</name>
 
@@ -27,7 +27,7 @@
         <connection>scm:git:git://github.com/1and1/foss-parent.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/1and1/foss-parent.git</developerConnection>
         <url>https://github.com/1and1/foss-parent/</url>
-      <tag>foss-parent-1.1.3</tag>
+      <tag>HEAD</tag>
   </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -333,7 +333,7 @@
                       <dependency>
                           <groupId>net.oneandone.maven.poms</groupId>
                           <artifactId>foss-configs</artifactId>
-                          <version>1.1</version>
+                          <version>1.2-SNAPSHOT</version>
                       </dependency>
                     </dependencies>
                 </plugin>
@@ -575,7 +575,7 @@
                         <dependency>
                             <groupId>net.oneandone.maven.poms</groupId>
                             <artifactId>foss-configs</artifactId>
-                            <version>1.1</version>
+                            <version>1.2-SNAPSHOT</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -644,7 +644,7 @@
                     <dependency>
                         <groupId>net.oneandone.maven.poms</groupId>
                         <artifactId>foss-configs</artifactId>
-                        <version>1.1</version>
+                        <version>1.2-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -689,7 +689,7 @@
             <extension><!-- needed for findbugs -->
                 <groupId>net.oneandone.maven.poms</groupId>
                 <artifactId>foss-configs</artifactId>
-                <version>1.1</version>
+                <version>1.2-SNAPSHOT</version>
             </extension>
         </extensions>
     </build>
