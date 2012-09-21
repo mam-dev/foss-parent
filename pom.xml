@@ -36,8 +36,8 @@
         <maven-changelog-plugin.version>2.2</maven-changelog-plugin.version>
         <maven-changes-plugin.version>2.7.1</maven-changes-plugin.version>
         <maven-checkstyle-plugin.version>2.9.1</maven-checkstyle-plugin.version>
-        <maven-checkstyle-plugin.configLocation>/net/oneandone/maven/fossconfigs/checkstyle-ruleset.xml</maven-checkstyle-plugin.configLocation>
-        <maven-checkstyle-plugin.suppressionsLocation>/net/oneandone/maven/fossconfigs/checkstyle-suppressions.xml</maven-checkstyle-plugin.suppressionsLocation>
+        <maven-checkstyle-plugin.configLocation>/net/oneandone/maven/poms/fossconfigs/checkstyle-ruleset.xml</maven-checkstyle-plugin.configLocation>
+        <maven-checkstyle-plugin.suppressionsLocation>/net/oneandone/maven/poms/fossconfigs/checkstyle-suppressions.xml</maven-checkstyle-plugin.suppressionsLocation>
         <maven-clean-plugin.version>2.5</maven-clean-plugin.version>
         <maven-compiler-plugin.version>2.5.1</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>2.5.1</maven-dependency-plugin.version>
@@ -60,11 +60,11 @@
         <maven-source-plugin.version>2.2</maven-source-plugin.version>
         <maven-surefire-plugin.version>2.12.3</maven-surefire-plugin.version>
         <maven-license-plugin.version>1.9.0</maven-license-plugin.version>
-        <maven-license-plugin.header>/net/oneandone/maven/fossconfigs/license-header.txt</maven-license-plugin.header>
+        <maven-license-plugin.header>/net/oneandone/maven/poms/fossconfigs/license-header.txt</maven-license-plugin.header>
         <buildnumber-maven-plugin.version>1.1</buildnumber-maven-plugin.version>
         <cobertura-maven-plugin.version>2.5.1</cobertura-maven-plugin.version>
         <findbugs-maven-plugin.version>2.5.2</findbugs-maven-plugin.version>
-        <findbugs-maven-plugin.excludeFilterFile>net/oneandone/maven/fossconfigs/findbugs-exclude.xml</findbugs-maven-plugin.excludeFilterFile>
+        <findbugs-maven-plugin.excludeFilterFile>net/oneandone/maven/poms/fossconfigs/findbugs-exclude.xml</findbugs-maven-plugin.excludeFilterFile>
         <velocity-maven-plugin.version>0.2.0</velocity-maven-plugin.version>
         <versions-maven-plugin.version>1.3.1</versions-maven-plugin.version>
         <plexus-component-metadata.version>1.5.5</plexus-component-metadata.version>
@@ -559,7 +559,7 @@
                     <artifactId>velocity-maven-plugin</artifactId>
                     <version>${velocity-maven-plugin.version}</version>
                     <configuration>
-                        <template>/net/oneandone/maven/fossconfigs/jenkins-description.html.vm</template>
+                        <template>/net/oneandone/maven/poms/fossconfigs/jenkins-description.html.vm</template>
                         <outputFile>target/jenkins-description.html</outputFile>
                     </configuration>
                     <executions>
