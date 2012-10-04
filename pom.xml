@@ -261,7 +261,7 @@
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/1and1/${project.artifactId}/issues/?sort=created&amp;state=open</url>
+        <url>https://github.com/1and1/${project.artifactId}/issues</url>
     </issueManagement>
     <ciManagement>
         <system>Jenkins</system>
