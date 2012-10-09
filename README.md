@@ -9,7 +9,7 @@ Releasing a project
 
 ... to [Maven Central](http://maven.apache.org/guides/mini/guide-central-repository-upload.html ) via [Sonatype OSS Repository Hosting](https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide):
 
-* add the following to your settings (see [general instructions](http://maven.apache.org/plugins/maven-site-plugin/examples/site-deploy-to-sourceforge.net.html)):
+* add the following to your settings:
 
 >     <settings>
 >       <servers>
@@ -24,17 +24,6 @@ Releasing a project
 >           <password>sonatype-pwd</password>
 >         </server>
 >       </servers>
->       <profiles>
->         <profile>
->           <id>release-properties</id>
->           <activation>
->             <property>
->               <name>performRelease</name>
->               <value>true</value>
->             </property>
->           </activation>
->         </profile>
->       </profiles>
 >     </settings>
 
 * `mvn release:prepare`
