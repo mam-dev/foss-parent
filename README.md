@@ -48,13 +48,13 @@ Deploy site to github
 
 Add 
 
->   <servers>
->     <server>
->       <id>github</id>
->       <username>GitHubLogin</username>
->       <password>GitHubPassw0rd</password>
->     </server>
->   </servers>
+>     <servers>
+>       <server>
+>         <id>github</id>
+>         <username>GitHubLogin</username>
+>         <password>GitHubPassw0rd</password>
+>       </server>
+>     </servers>
 
 to your settings.xml and run
 
