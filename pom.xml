@@ -56,9 +56,9 @@
         <maven-project-info-reports-plugin.version>2.5.1</maven-project-info-reports-plugin.version>
         <maven-release-plugin.version>2.3.2</maven-release-plugin.version>
         <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
-        <maven-site-plugin.version>3.1</maven-site-plugin.version>
+        <maven-site-plugin.version>3.2</maven-site-plugin.version>
         <maven-scm-plugin.version>1.8</maven-scm-plugin.version>
-        <maven-source-plugin.version>2.2</maven-source-plugin.version>
+        <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
         <maven-surefire-plugin.version>2.12.4</maven-surefire-plugin.version>
         <maven-license-plugin.version>1.10.b1</maven-license-plugin.version>
         <maven-license-plugin.header>/net/oneandone/maven/poms/fossconfigs/license-header.txt</maven-license-plugin.header>
@@ -71,7 +71,7 @@
         <plexus-component-metadata.version>1.5.5</plexus-component-metadata.version>
         <org.joda.version>0.6</org.joda.version>
         <joda-time.version>2.1</joda-time.version>
-        <org.slf4j.version>1.7.1</org.slf4j.version>
+        <org.slf4j.version>1.7.2</org.slf4j.version>
         <guava.version>13.0.1</guava.version>
         <gson.version>2.2.2</gson.version>
         <oneandone.java.source>1.6</oneandone.java.source>
@@ -113,7 +113,7 @@
             <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-all</artifactId>
-                <version>1.9.5-rc1</version>
+                <version>1.9.5</version>
                 <scope>test</scope>
             </dependency>
 
