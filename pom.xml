@@ -62,7 +62,7 @@
         <maven-surefire-plugin.version>2.12.4</maven-surefire-plugin.version>
         <maven-license-plugin.version>1.10.b1</maven-license-plugin.version>
         <maven-license-plugin.header>/net/oneandone/maven/poms/fossconfigs/license-header.txt</maven-license-plugin.header>
-        <buildnumber-maven-plugin.version>1.1</buildnumber-maven-plugin.version>
+        <buildnumber-maven-plugin.version>1.2</buildnumber-maven-plugin.version>
         <cobertura-maven-plugin.version>2.5.2</cobertura-maven-plugin.version>
         <findbugs-maven-plugin.version>2.5.2</findbugs-maven-plugin.version>
         <findbugs-maven-plugin.excludeFilterFile>net/oneandone/maven/poms/fossconfigs/findbugs-exclude.xml</findbugs-maven-plugin.excludeFilterFile>
