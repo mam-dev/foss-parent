@@ -29,6 +29,8 @@
                 <projectId>1and1/${project.artifactId}</projectId>
                 <ribbonOrientation>right</ribbonOrientation>
                 <ribbonColor>gray</ribbonColor>
+                <leftColumnClass>span2</leftColumnClass>
+                <bodyColumnClass>span10</bodyColumnClass>
             </gitHub>
             <googlePlusOne />
         </fluidoSkin>
