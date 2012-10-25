@@ -63,8 +63,9 @@ TODO: http://www.sonatype.com/books/nexus-book/reference/staging-sect-managing-p
 Deploy site to github
 ---------------------
 
-Add 
+To deploy a site to github using https://github.com/github/maven-plugins:
 
+Add
 >     <servers>
 >       <server>
 >         <id>github</id>
