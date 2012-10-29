@@ -32,6 +32,14 @@ Latest releases
 ... may be found at [Maven Central](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.oneandone.maven.poms%22%20AND%20a%3A%22foss-parent%22%20AND%20p%3A%22pom%22
 ).
 
+
+Rules for versions
+------------------
+
+* **Major** version bump for cases where the user of the ``pom`` MUST change or add stuff in her project (new file is needed, plugin or dependency not defined in the ``pom``anymore)
+* **Minor** version bump for cases where versions of managed dependencies or managed plugins receive a major update so most of the times a quick fix would be to freeze the versions of the aforementioned dependencies or plugins in the project's ``pom``. This includes additions of managed plugins or dependencies as well.
+* **Micro** version bump for cases where where versions of managed dependencies or managed plugins receive a minor update.
+
 Releasing a project
 -------------------
 
