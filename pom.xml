@@ -9,7 +9,7 @@
 
     <description>Parent POM for 1-and-1 open source projects.</description>
 
-    <url>https://github.com/1and1/foss-parent</url>
+    <url>http://1and1.github.com/foss-parent</url>
 
     <organization>
         <name>1&amp;1</name>
