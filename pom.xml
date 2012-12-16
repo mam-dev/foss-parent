@@ -94,6 +94,7 @@
         <org.joda.joda-primitives.version>1.0</org.joda.joda-primitives.version>
         <org.slf4j.version>1.7.2</org.slf4j.version>
         <plexus-component-metadata.version>1.5.5</plexus-component-metadata.version>
+        <doxia-module-markdown.version>1.3</doxia-module-markdown.version>
     </properties>
 
     <licenses>
@@ -620,6 +621,13 @@
                             </goals>
                         </execution>
                     </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.apache.maven.doxia</groupId>
+                            <artifactId>doxia-module-markdown</artifactId>
+                            <version>${doxia-module-markdown.version}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
