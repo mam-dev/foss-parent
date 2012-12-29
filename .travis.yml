@@ -7,3 +7,6 @@ script: "mvn clean verify site"
 branches:
     except:
         - gh-pages
+notifications:
+    email:
+        - mfriedenhagen@gmail.com
