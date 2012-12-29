@@ -4,3 +4,6 @@ jdk:
   - openjdk7
   - openjdk6
 script: "mvn clean verify site"
+branches:
+    except:
+        - gh-pages
