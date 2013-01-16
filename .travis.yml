@@ -3,6 +3,7 @@ jdk:
   - oraclejdk7
   - openjdk7
   - openjdk6
+install: "mvn validate"
 script: "mvn clean verify site"
 branches:
     except:
