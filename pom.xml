@@ -27,8 +27,8 @@
         <connection>scm:git:git://github.com/1and1/foss-parent.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/1and1/foss-parent.git</developerConnection>
         <url>https://github.com/1and1/foss-parent/</url>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
     <properties>
         <!-- common build properties -->
         <netbeans.checkstyle.format>true</netbeans.checkstyle.format>
@@ -411,18 +411,18 @@
                     <artifactId>maven-license-plugin</artifactId>
                     <version>${maven-license-plugin.version}</version>
                     <configuration>
-                      <header>${maven-license-plugin.header}</header>
-                      <strictCheck>true</strictCheck>
-                      <includes>
-                        <include>src/**/*.java</include>
-                      </includes>
+                        <header>${maven-license-plugin.header}</header>
+                        <strictCheck>true</strictCheck>
+                        <includes>
+                            <include>src/**/*.java</include>
+                        </includes>
                     </configuration>
                     <dependencies>
-                      <dependency>
-                          <groupId>net.oneandone.maven.poms</groupId>
-                          <artifactId>foss-configs</artifactId>
-                          <version>1.1</version>
-                      </dependency>
+                        <dependency>
+                            <groupId>net.oneandone.maven.poms</groupId>
+                            <artifactId>foss-configs</artifactId>
+                            <version>1.1</version>
+                        </dependency>
                     </dependencies>
                 </plugin>
                 <plugin>
