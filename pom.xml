@@ -76,6 +76,7 @@
         <findbugs-maven-plugin.excludeFilterFile>net/oneandone/maven/poms/fossconfigs/findbugs-exclude.xml</findbugs-maven-plugin.excludeFilterFile>
         <github-site-plugin.version>0.7</github-site-plugin.version>
         <github.global.server>github</github.global.server>
+        <jacoco-maven-plugin.version>0.6.1.201212231917</jacoco-maven-plugin.version>
         <jdepend-maven-plugin.version>2.0-beta-2</jdepend-maven-plugin.version>
         <velocity-maven-plugin.version>0.2.0</velocity-maven-plugin.version>
         <versions-maven-plugin.version>2.0</versions-maven-plugin.version>
@@ -711,6 +712,19 @@
                         <minimumTokens>100</minimumTokens>
                         <targetJdk>${oneandone.java.target}</targetJdk>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${jacoco-maven-plugin.version}</version>
+                    <inherited>true</inherited>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>com.github.github</groupId>
