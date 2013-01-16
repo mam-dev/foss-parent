@@ -24,7 +24,7 @@ import org.junit.Test;
 public class AppTest {
 
     @Test
-    public void testSomeMethod() {
-        new App();
+    public void testForUnitTest() {
+        new App().forUnitTest();
     }
 }

@@ -20,5 +20,12 @@ package net.oneandone.sampleproject;
  * @author mirko
  */
 public class App {
+    
+    public void forUnitTest() {
+        
+    }
 
+    public void forITTest() {
+        
+    }
 }
