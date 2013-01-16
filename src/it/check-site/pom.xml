@@ -13,6 +13,11 @@
 
     <url>https://github.com/1and1/${project.artifactId}/</url>
 
+    <properties>
+        <versions.skip>true</versions.skip>
+        <jacoco.skip>true</jacoco.skip>
+    </properties>
+
     <organization>
         <name>1&amp;1</name>
         <url>https://1and1.github.com/</url>

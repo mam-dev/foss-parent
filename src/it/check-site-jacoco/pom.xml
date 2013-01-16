@@ -13,6 +13,10 @@
 
     <url>https://github.com/1and1/${project.artifactId}/</url>
 
+    <properties>
+        <versions.skip>true</versions.skip>
+    </properties>
+
     <organization>
         <name>1&amp;1</name>
         <url>https://1and1.github.com/</url>
@@ -45,21 +49,4 @@
             </roles>
         </developer>
     </developers>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>${jjacoco-maven-plugin.version}</version>
-            </plugin>        
-        </plugins>
-    </reporting>
 </project>

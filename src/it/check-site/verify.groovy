@@ -4,7 +4,7 @@ assert file.exists();
 String buildLog = file.getText("UTF-8");
 assert !buildLog.contains('org.apache.maven.project.ProjectBuildingException');
 
-assert !buildLog.contains('configuring report plugin org.jacoco:jacoco-maven-plugin')
+assert buildLog.contains('Skipping JaCoCo execution')
 
 assert new File( basedir, "target/failsafe-reports/failsafe-summary.xml").exists();
 assert new File( basedir, "target/site/failsafe-report.html").exists();
