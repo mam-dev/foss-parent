@@ -3,6 +3,10 @@ Parent POM for 1-and-1 open source projects.
 Contains common configuration for projects that use github and Sonatype OSS Repository Hosting.
 Default License is Apache 2.0.
 
+Changelog
+---------
+http://1and1.github.com/foss-parent/github-report.html
+
 How to use the POM
 ------------------
 
