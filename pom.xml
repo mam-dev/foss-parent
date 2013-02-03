@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.oneandone.maven.poms</groupId>
     <artifactId>foss-parent</artifactId>
-    <version>1.3.3</version>
+    <version>1.4-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>foss parent pom for 1-and-1 projects</name>
 
@@ -27,7 +27,7 @@
         <connection>scm:git:git://github.com/1and1/foss-parent.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/1and1/foss-parent.git</developerConnection>
         <url>https://github.com/1and1/foss-parent/</url>
-        <tag>foss-parent-1.3.3</tag>
+        <tag>HEAD</tag>
     </scm>
     <properties>
         <!-- common build properties -->
