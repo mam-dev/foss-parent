@@ -36,6 +36,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <oneandone.java.source>1.6</oneandone.java.source>
         <oneandone.java.target>1.6</oneandone.java.target>
+        <scmpublish.content>target/staging</scmpublish.content>
 
         <!-- apache plugin versions and configurations, please sort alphabetically -->
         <maven-antrun-plugin.version>1.7</maven-antrun-plugin.version>
@@ -64,6 +65,7 @@
         <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
         <maven-site-plugin.version>3.2</maven-site-plugin.version>
         <maven-scm-plugin.version>1.8.1</maven-scm-plugin.version>
+        <maven-scm-publish-plugin.version>1.0-beta-2</maven-scm-publish-plugin.version>
         <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
         <maven-surefire-plugin.version>2.13</maven-surefire-plugin.version>
 
@@ -508,6 +510,16 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-scm-plugin</artifactId>
                     <version>${maven-scm-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-scm-publish-plugin</artifactId>
+                    <version>${maven-scm-publish-plugin.version}</version>
+                    <inherited>true</inherited>
+                    <configuration>
+                        <pubScmUrl>${project.scm.developerConnection}</pubScmUrl>
+                        <scmBranch>gh-pages</scmBranch>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
