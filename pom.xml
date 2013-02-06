@@ -545,7 +545,7 @@
                         <quiet>true</quiet>
                         <links>
                             <link>http://docs.oracle.com/javase/6/docs/api/</link>
-                            <link>http://kentbeck.github.com/junit/javadoc/latest/</link>
+                            <link>http://junit-team.github.com/junit/javadoc/latest/</link>
                             <link>http://www.slf4j.org/apidocs/</link>
                         </links>
                     </configuration>
@@ -885,7 +885,7 @@
                             <quiet>true</quiet>
                             <links>
                                 <link>http://docs.oracle.com/javase/6/docs/api/</link>
-                                <link>http://kentbeck.github.com/junit/javadoc/latest/</link>
+                                <link>http://junit-team.github.com/junit/javadoc/latest/</link>
                                 <link>http://www.slf4j.org/apidocs/</link>
                             </links>
                         </configuration>
