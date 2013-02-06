@@ -865,14 +865,24 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>${maven-javadoc-plugin.version}</version>
-                <configuration>
-                    <quiet>true</quiet>
-                    <links>
-                        <link>http://docs.oracle.com/javase/6/docs/api/</link>
-                        <link>http://kentbeck.github.com/junit/javadoc/latest/</link>
-                        <link>http://www.slf4j.org/apidocs/</link>
-                    </links>
-                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <id>default</id>
+                        <configuration>
+                            <notimestamp>true</notimestamp>
+                            <quiet>true</quiet>
+                            <links>
+                                <link>http://docs.oracle.com/javase/6/docs/api/</link>
+                                <link>http://kentbeck.github.com/junit/javadoc/latest/</link>
+                                <link>http://www.slf4j.org/apidocs/</link>
+                            </links>
+                        </configuration>
+                        <reports>
+                            <report>javadoc</report>
+                            <report>test-javadoc</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
