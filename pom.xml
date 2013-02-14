@@ -671,6 +671,7 @@
                     <executions>
                         <execution>
                             <id>foss-parent-create-jenkins-description</id>
+                            <phase>verify</phase>
                             <goals>
                                 <goal>velocity</goal>
                             </goals>
