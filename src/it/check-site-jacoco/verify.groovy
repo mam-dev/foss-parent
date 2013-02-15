@@ -6,6 +6,8 @@ assert !buildLog.contains('org.apache.maven.project.ProjectBuildingException');
 
 assert !buildLog.contains('net.sourceforge.cobertura.reporting.xml.XMLReport')
 
+assert new File( basedir, "target/jenkins-description.html").exists();
+
 assert new File( basedir, "target/failsafe-reports/failsafe-summary.xml").exists();
 assert new File( basedir, "target/site/failsafe-report.html").exists();
 
