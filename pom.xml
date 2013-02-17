@@ -84,7 +84,7 @@
         <versions-maven-plugin.version>2.0</versions-maven-plugin.version>
 
         <!-- non plugin versions, please sort alphabetically -->
-        <guava.version>14.0-rc2</guava.version>
+        <guava.version>14.0-rc3</guava.version>
         <gson.version>2.2.2</gson.version>
         <guice.version>3.0</guice.version>
         <httpcomponents.version>4.2.3</httpcomponents.version>
@@ -324,7 +324,7 @@
             <dependency>
                 <groupId>javax.mail</groupId>
                 <artifactId>mail</artifactId>
-                <version>1.4.6-rc1</version>
+                <version>1.4.6</version>
             </dependency>
             <dependency>
                 <groupId>javax.servlet</groupId>
