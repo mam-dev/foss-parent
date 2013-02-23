@@ -705,7 +705,7 @@
                             </goals>
                             <configuration>
                                 <streamLogs>false</streamLogs>
-                                <debug>true</debug>
+                                <debug>false</debug>
                             </configuration>
                         </execution>
                     </executions>
