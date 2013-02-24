@@ -443,7 +443,6 @@
                     <executions>
                         <execution>
                             <id>default-create</id>
-                            <phase>validate</phase>
                             <goals>
                                 <goal>create</goal>
                             </goals>
@@ -476,14 +475,12 @@
                     <executions>
                         <execution>
                             <id>default-jar-no-fork</id>
-                            <phase>package</phase>
                             <goals>
                                 <goal>jar-no-fork</goal>
                             </goals>
                         </execution>
                         <execution>
                             <id>default-test-jar-no-fork</id>
-                            <phase>package</phase>
                             <goals>
                                 <goal>test-jar-no-fork</goal>
                             </goals>
@@ -573,7 +570,6 @@
                     <executions>
                         <execution>
                             <id>default-jar</id>
-                            <phase>package</phase>
                             <goals>
                                 <goal>jar</goal>
                             </goals>
@@ -896,6 +892,8 @@
                         <configuration>
                             <notimestamp>true</notimestamp>
                             <quiet>true</quiet>
+                            <detectLinks>false</detectLinks>
+                            <detectOfflineLinks>false</detectOfflineLinks>
                             <links>
                                 <link>http://docs.oracle.com/javase/6/docs/api/</link>
                                 <link>http://junit-team.github.com/junit/javadoc/latest/</link>
