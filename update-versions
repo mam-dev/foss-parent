@@ -1,0 +1,2 @@
+#!/bin/sh
+mvn versions:update-properties versions:use-latest-releases | grep Updated
