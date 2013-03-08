@@ -23,6 +23,10 @@
         <url>https://1and1.github.com/</url>
     </organization>
 
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/1and1/foss-parent/issues</url>
+    </issueManagement>
 
     <inceptionYear>2012</inceptionYear>
     <scm>
