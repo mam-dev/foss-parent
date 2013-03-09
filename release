@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ "$1" == "" ]
+then
+    echo "You must give me the previous version."
+    exit 1
+fi
+mvn -Darguments="-DpreviousVersion=$1"  -DpreparationGoals="clean deploy changes:announcement-generate -DperformRelease=true" release:prepare
