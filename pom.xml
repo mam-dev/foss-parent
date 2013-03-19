@@ -794,6 +794,19 @@
                         <generateBackupPoms>false</generateBackupPoms>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>net.oneandone.maven.plugins</groupId>
+                    <artifactId>attach-qar-maven-plugin</artifactId>
+                    <version>1.2</version>
+                    <executions>
+                        <execution>
+                            <id>default-attach</id>
+                            <goals>
+                                <goal>attach</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
@@ -849,6 +862,10 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>net.oneandone.maven.plugins</groupId>
+                <artifactId>attach-qar-maven-plugin</artifactId>
             </plugin>
         </plugins>
         <extensions>

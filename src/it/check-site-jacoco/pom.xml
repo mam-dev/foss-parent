@@ -7,6 +7,7 @@
         <version>@project.version@</version>
     </parent>
     <artifactId>sample-project-jacoco</artifactId>
+    <version>3000-SNAPSHOT</version>
     <name>sample project for site generation with jacoco.</name>
 
     <description>Integration Test Project</description>
