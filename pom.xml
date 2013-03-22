@@ -1059,7 +1059,9 @@
         <profile>
             <id>foss-parent-verification</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <file>
+                    <exists>src/main/java</exists>
+                </file>
             </activation>
             <build>
                 <plugins>
