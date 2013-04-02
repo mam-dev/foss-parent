@@ -606,7 +606,7 @@
                                 <runOnlyAtExecutionRoot>true</runOnlyAtExecutionRoot>
                                 <announceParameters>
                                     <issueManagementUrl>${project.issueManagement.url}</issueManagementUrl>
-                                    <compareUrl>${project.scm.url}compare/${project.artifactId}-${previousVersion}...${project.artifactId}-${changes.version}</compareUrl>
+                                    <compareUrl>${project.scm.url}compare/${project.artifactId}-${previousVersion}...${project.artifactId}-${project.version}</compareUrl>
                                 </announceParameters>
                             </configuration>
                         </execution>
