@@ -605,7 +605,7 @@
                                 </issueManagementSystems>
                                 <runOnlyAtExecutionRoot>true</runOnlyAtExecutionRoot>
                                 <announceParameters>
-                                    <issueManagementUrl>${project.issueManagement.url}</issueManagementUrl>
+                                    <issueManagementUrl>${project.issueManagement.url}?milestone=${milestone}&amp;state=closed</issueManagementUrl>
                                     <compareUrl>${project.scm.url}compare/${project.artifactId}-${previousVersion}...${project.artifactId}-${project.version}</compareUrl>
                                 </announceParameters>
                             </configuration>

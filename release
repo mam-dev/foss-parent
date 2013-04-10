@@ -1,7 +1,50 @@
-#!/bin/sh
-if [ "$1" == "" ]
-then
-    echo "You must give me the previous version."
-    exit 1
-fi
-mvn -Darguments="-DpreviousVersion=$1"  -DpreparationGoals="clean deploy changes:announcement-generate -DperformRelease=true" release:prepare
+#!/usr/bin/env python
+import urllib
+import json
+import os
+import sys
+
+ORG_AND_PROJECT = "1and1/foss-parent"
+
+class GithubApi(object):
+
+    def __init__(self, orgAndProject, milestone):
+        self.baseUrl = "https://api.github.com/repos/%s" % orgAndProject
+        self.milestone = milestone
+        self._fetchMilestoneInfo()
+
+    def retrieveOpenIssues(self):
+        return json.load(urllib.urlopen("%s/issues?milestone=%s&state=open" % (self.baseUrl, self.milestone)))
+
+    def _fetchMilestoneInfo(self):
+        self.milestoneInfo = json.load(urllib.urlopen("%s/milestones/%s" % (self.baseUrl, self.milestone)))
+
+    def hasOpenIssues(self):
+        return self.milestoneInfo["open_issues"] > 0
+
+if __name__ == "__main__":
+    if os.environ.get("GPG_AGENT_INFO") is None:
+        sys.exit("GPG_AGENT not started")
+    if len(sys.argv) != 3:
+        sys.exit("Usage: %s previousVersion milestone, e.g. %s 1.3.10 20" % (sys.argv[0], sys.argv[0]))
+    previousVersion = sys.argv[1]
+    milestone = sys.argv[2]
+    gh = GithubApi(ORG_AND_PROJECT, milestone)
+    if gh.hasOpenIssues():
+        openIssues = gh.retrieveOpenIssues()
+        sys.exit("Found open issues on github for milestone %s (title: %s):\n%s" % (
+            milestone,
+            gh.milestoneInfo["title"],
+            "\n".join("#%(number)d %(title)s" % issue for issue in openIssues)
+            )
+        )
+    releaseVersion = gh.milestoneInfo["title"]
+    cmd = """\
+mvn \
+-Darguments="-DpreviousVersion=%(previousVersion)s -Dmilestone=%(milestone)s" \
+-DreleaseVersion=%(releaseVersion)s \
+-DpreparationGoals="clean deploy changes:announcement-generate -DperformRelease=true" release:prepare
+    """ % locals()
+    raw_input("About to execute:\n%s\nHit enter to proceed, CTRL+D to cancel" % cmd)
+    os.system(cmd)
+    os.system("mvn release:clean")
