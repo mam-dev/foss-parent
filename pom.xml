@@ -103,12 +103,12 @@
         <plexus-component-metadata.version>1.5.5</plexus-component-metadata.version>
 
         <!-- define coverage ratios used during jacoco-maven-plugin:check -->
-        <jacoco.check.classRatio>100</jacoco.check.classRatio>
-        <jacoco.check.instructionRatio>100</jacoco.check.instructionRatio>
-        <jacoco.check.methodRatio>100</jacoco.check.methodRatio>
-        <jacoco.check.branchRatio>100</jacoco.check.branchRatio>
-        <jacoco.check.complexityRatio>100</jacoco.check.complexityRatio>
-        <jacoco.check.lineRatio>100</jacoco.check.lineRatio>
+        <jacoco.check.classRatio>90</jacoco.check.classRatio>
+        <jacoco.check.instructionRatio>90</jacoco.check.instructionRatio>
+        <jacoco.check.methodRatio>90</jacoco.check.methodRatio>
+        <jacoco.check.branchRatio>90</jacoco.check.branchRatio>
+        <jacoco.check.complexityRatio>90</jacoco.check.complexityRatio>
+        <jacoco.check.lineRatio>90</jacoco.check.lineRatio>
     </properties>
 
     <licenses>
