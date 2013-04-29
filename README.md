@@ -7,7 +7,7 @@ Latest Jenkins-Build: [![Build Status](http://huschteguzzel.de/hudson/job/oneand
 
 Changelog
 ---------
-http://1and1.github.com/foss-parent/github-report.html
+http://1and1.github.io/foss-parent/github-report.html
 
 How to use the POM
 ------------------
