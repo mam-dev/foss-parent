@@ -1,8 +1,6 @@
 language: java
 jdk:
   - oraclejdk7
-  - openjdk7
-  - openjdk6
 install: "mvn --errors --batch-mode validate dependency:go-offline"
 script: "mvn --errors --batch-mode -Dversions.skip=true clean verify site"
 branches:
