@@ -77,19 +77,12 @@ TODO: http://www.sonatype.com/books/nexus-book/reference/staging-sect-managing-p
 Deploy site to github
 ---------------------
 
-To deploy a site to github using https://github.com/github/maven-plugins add
+To deploy a site to github using [maven-scm-publish-plugin](http://maven.apache.org/plugins/maven-scm-publish-plugin/):
 
->     <servers>
->       <server>
->         <id>github</id>
->         <username>GitHubLogin</username>
->         <password>GitHubPassw0rd</password>
->       </server>
->     </servers>
-
-to your settings.xml and run
-
->     mvn site com.github.github:site-maven-plugin:site
+* Add a new branch `gh-pages` [manually](https://help.github.com/articles/creating-project-pages-manually).
+* Introduce a property `scmpublish.content` (normally `<scmpublish.content>target/staging/ARTIFACTID</scmpublish.content>`).
+* Add `src/site/resources/.nojekyll` [to add hidden files (e.g. for jacoco)](http://illegalstateexception.blogspot.de/2013/01/publishing-maven-site-having-jacoco.html) as well.
+* Run `mvn clean verify site site:stage scm-publish:publish-scm`.
 
 
 Adjust license headers
