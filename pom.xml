@@ -347,11 +347,11 @@
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/1and1/${project.artifactId}/issues</url>
+        <url>https://github.com/1and1/foss-parent/issues/</url>
     </issueManagement>
     <ciManagement>
         <system>Jenkins</system>
-        <url>http://huschteguzzel.de/hudson/job/oneandone-${project.artifactId}/</url>
+        <url>http://huschteguzzel.de/hudson/job/oneandone-foss-parent/</url>
     </ciManagement>
     <developers>
         <developer>
