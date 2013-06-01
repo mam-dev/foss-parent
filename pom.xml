@@ -5,7 +5,7 @@
     <artifactId>foss-parent</artifactId>
     <version>1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>1&amp;1 :: FOSS parent pom</name>
+    <name>1-and-1 :: FOSS parent pom</name>
 
     <description>
         Parent POM for 1-and-1 open source projects.
