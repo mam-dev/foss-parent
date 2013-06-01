@@ -5,9 +5,12 @@
     <artifactId>foss-parent</artifactId>
     <version>1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>FOSS parent pom for 1-and-1 projects</name>
+    <name>1&amp;1 :: FOSS parent pom</name>
 
-    <description>Parent POM for 1-and-1 open source projects.</description>
+    <description>
+        Parent POM for 1-and-1 open source projects.
+        Defines oftenly used dependencies as well as plugins and their versions.
+    </description>
 
     <url>http://1and1.github.io/foss-parent</url>
 
