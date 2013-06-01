@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20130601" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>1-and-1 :: FOSS parent pom - Surefire Report</title>
+    <title>1-and-1 :: FOSS parent pom - Invoker Report</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.0.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -65,7 +65,7 @@
         1-and-1 :: FOSS parent pom</a>
         </li>
       <li class="divider ">/</li>
-        <li class="">Surefire Report</li>
+        <li class="">Invoker Report</li>
         
                 
                     
@@ -105,10 +105,12 @@
         GitHub Report</a>
             </li>
                       
-      <li class="active">
+      <li>
     
-            <a href="#"><i class="none"></i>Surefire Report</a>
-          </li>
+                          <a href="surefire-report.html" title="Surefire Report">
+          <i class="none"></i>
+        Surefire Report</a>
+            </li>
                       
       <li>
     
@@ -138,12 +140,10 @@
         Dependency Updates Report</a>
             </li>
                       
-      <li>
+      <li class="active">
     
-                          <a href="invoker-report.html" title="Invoker Build Results">
-          <i class="none"></i>
-        Invoker Build Results</a>
-            </li>
+            <a href="#"><i class="none"></i>Invoker Build Results</a>
+          </li>
               </ul>
         </li>
             </ul>
@@ -175,43 +175,51 @@
                         
         <div id="bodyColumn"  class="span10" >
                                   
-            <script type="text/javascript">
-//<![CDATA[
-function toggleDisplay(elementId) {
- var elm = document.getElementById(elementId + 'error');
- if (elm && typeof elm.style != "undefined") {
- if (elm.style.display == "none") {
- elm.style.display = "";
- document.getElementById(elementId + 'off').style.display = "none";
- document.getElementById(elementId + 'on').style.display = "inline";
- } else if (elm.style.display == "") { elm.style.display = "none";
- document.getElementById(elementId + 'off').style.display = "inline";
- document.getElementById(elementId + 'on').style.display = "none";
- } 
- } 
- }
-//]]>
-</script>
+            <div class="section">
+<h2>Invoker Report<a name="Invoker_Report"></a></h2>
+<p>The results of the Maven invocations.</p></div>
 <div class="section">
-<h2>Surefire Report<a name="Surefire_Report"></a></h2></div>
-<div class="section">
-<h2>Summary<a name="Summary"></a></h2><a name="Summary"></a><br />
-<table border="1" class="table table-striped">
+<h3>Summary<a name="Summary"></a></h3></div>
+<table border="0" class="table table-striped">
 <tr class="a">
-<th>Tests</th>
-<th>Errors </th>
+<th>Builds</th>
+<th>Success</th>
 <th>Failures</th>
 <th>Skipped</th>
 <th>Success Rate</th>
-<th>Time</th></tr>
+<th>Total Time</th>
+<th>Avg Time</th></tr>
 <tr class="b">
+<td>3</td>
+<td>3</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0%</td>
-<td>0</td></tr></table><br />
-<p>Note: failures are anticipated and checked for with assertions while errors are unanticipated.</p><br /></div>
+<td>100.0%</td>
+<td>166.2&#xa0;s</td>
+<td>55.4&#xa0;s</td></tr></table>
+<div class="section">
+<h3>Build Details<a name="Build_Details"></a></h3></div>
+<table border="0" class="table table-striped">
+<tr class="a">
+<th>Name</th>
+<th>Result</th>
+<th>Time</th>
+<th>Message</th></tr>
+<tr class="b">
+<td>check-pom-jacoco/pom.xml</td>
+<td>success</td>
+<td>25.5&#xa0;s</td>
+<td></td></tr>
+<tr class="a">
+<td>check-site-jacoco/pom.xml</td>
+<td>success</td>
+<td>76.0&#xa0;s</td>
+<td></td></tr>
+<tr class="b">
+<td>check-site/pom.xml</td>
+<td>success</td>
+<td>64.7&#xa0;s</td>
+<td></td></tr></table>
                   </div>
             </div>
           </div>
