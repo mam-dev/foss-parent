@@ -82,7 +82,7 @@
         <findbugs-maven-plugin.excludeFilterFile>net/oneandone/maven/poms/fossconfigs/findbugs-exclude.xml</findbugs-maven-plugin.excludeFilterFile>
         <github-site-plugin.version>0.8</github-site-plugin.version>
         <github.global.server>github</github.global.server>
-        <jacoco-maven-plugin.version>0.6.2.201302030002</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.6.3.201306030806</jacoco-maven-plugin.version>
         <jdepend-maven-plugin.version>2.0-beta-2</jdepend-maven-plugin.version>
         <velocity-maven-plugin.version>0.3.0</velocity-maven-plugin.version>
         <versions-maven-plugin.version>2.0</versions-maven-plugin.version>
@@ -106,12 +106,12 @@
         <plexus-component-metadata.version>1.5.5</plexus-component-metadata.version>
 
         <!-- define coverage ratios used during jacoco-maven-plugin:check -->
-        <jacoco.check.classRatio>90</jacoco.check.classRatio>
-        <jacoco.check.instructionRatio>90</jacoco.check.instructionRatio>
-        <jacoco.check.methodRatio>90</jacoco.check.methodRatio>
-        <jacoco.check.branchRatio>90</jacoco.check.branchRatio>
-        <jacoco.check.complexityRatio>90</jacoco.check.complexityRatio>
-        <jacoco.check.lineRatio>90</jacoco.check.lineRatio>
+        <jacoco.check.classRatio>0.90</jacoco.check.classRatio>
+        <jacoco.check.instructionRatio>0.90</jacoco.check.instructionRatio>
+        <jacoco.check.methodRatio>0.90</jacoco.check.methodRatio>
+        <jacoco.check.branchRatio>0.90</jacoco.check.branchRatio>
+        <jacoco.check.complexityRatio>0.90</jacoco.check.complexityRatio>
+        <jacoco.check.lineRatio>0.90</jacoco.check.lineRatio>
     </properties>
 
     <licenses>
@@ -1139,14 +1139,36 @@
                                     <goal>check</goal>
                                 </goals>
                                 <configuration>
-                                    <check>
-                                        <classRatio>${jacoco.check.classRatio}</classRatio>
-                                        <instructionRatio>${jacoco.check.instructionRatio}</instructionRatio>
-                                        <methodRatio>${jacoco.check.methodRatio}</methodRatio>
-                                        <branchRatio>${jacoco.check.branchRatio}</branchRatio>
-                                        <complexityRatio>${jacoco.check.complexityRatio}</complexityRatio>
-                                        <lineRatio>${jacoco.check.lineRatio}</lineRatio>
-                                    </check>
+                                    <rules>
+                                        <rule>
+                                            <limits>
+                                                <limit>
+                                                    <counter>CLASS</counter>
+                                                    <minimum>${jacoco.check.classRatio}</minimum>
+                                                </limit>
+                                                <limit>
+                                                    <counter>INSTRUCTION</counter>
+                                                    <minimum>${jacoco.check.instructionRatio}</minimum>
+                                                </limit>
+                                                <limit>
+                                                    <counter>METHOD</counter>
+                                                    <minimum>${jacoco.check.methodRatio}</minimum>
+                                                </limit>
+                                                <limit>
+                                                    <counter>BRANCH</counter>
+                                                    <minimum>${jacoco.check.branchRatio}</minimum>
+                                                </limit>
+                                                <limit>
+                                                    <counter>COMPLEXITY</counter>
+                                                    <minimum>${jacoco.check.complexityRatio}</minimum>
+                                                </limit>
+                                                <limit>
+                                                    <counter>LINE</counter>
+                                                    <minimum>${jacoco.check.lineRatio}</minimum>
+                                                </limit>
+                                            </limits>
+                                        </rule>
+                                    </rules>
                                 </configuration>
                             </execution>
                         </executions>
