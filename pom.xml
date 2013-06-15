@@ -805,6 +805,15 @@
                     <artifactId>versions-maven-plugin</artifactId>
                     <version>${versions-maven-plugin.version}</version>
                     <configuration>
+                        <excludeProperties>httpcomponents.version</excludeProperties>
+                        <excludes>
+                            <!-- as long as maven-3.1 is alpha -->
+                            <exclude>org.apache.maven:maven-artifact</exclude>
+                            <exclude>org.apache.maven:maven-core</exclude>
+                            <exclude>org.apache.maven:maven-plugin-api</exclude>
+                            <!-- No not want 99.0-does-not-exist -->
+                            <exclude>commons-logging:commons-logging</exclude>
+                        </excludes>
                         <generateBackupPoms>false</generateBackupPoms>
                     </configuration>
                 </plugin>
