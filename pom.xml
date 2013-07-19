@@ -53,7 +53,7 @@
         <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>2.8</maven-dependency-plugin.version>
         <maven-deploy-plugin.version>2.7</maven-deploy-plugin.version>
-        <maven-enforcer-plugin.version>1.2</maven-enforcer-plugin.version>
+        <maven-enforcer-plugin.version>1.3.1</maven-enforcer-plugin.version>
         <maven-failsafe-plugin.version>2.15</maven-failsafe-plugin.version>
         <maven-gpg-plugin.version>1.4</maven-gpg-plugin.version>
         <maven-invoker-plugin.version>1.8</maven-invoker-plugin.version>
@@ -61,7 +61,7 @@
         <maven-pmd-plugin.version>3.0.1</maven-pmd-plugin.version>
         <maven-plugin-plugin.version>3.2</maven-plugin-plugin.version>
         <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
-        <maven-javadoc-plugin.version>2.9</maven-javadoc-plugin.version>
+        <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
         <maven-jxr-plugin.version>2.3</maven-jxr-plugin.version>
         <maven-project-info-reports-plugin.version>2.7</maven-project-info-reports-plugin.version>
         <maven-release-plugin.version>2.4.1</maven-release-plugin.version>
@@ -85,11 +85,11 @@
         <jacoco-maven-plugin.version>0.6.3.201306030806</jacoco-maven-plugin.version>
         <jdepend-maven-plugin.version>2.0-beta-2</jdepend-maven-plugin.version>
         <velocity-maven-plugin.version>0.3.0</velocity-maven-plugin.version>
-        <versions-maven-plugin.version>2.0</versions-maven-plugin.version>
+        <versions-maven-plugin.version>2.1</versions-maven-plugin.version>
 
         <!-- non plugin versions, please sort alphabetically -->
         <doxia-module-markdown.version>1.4</doxia-module-markdown.version>
-        <extra-enforcer-rules.version>1.0-alpha-4</extra-enforcer-rules.version>
+        <extra-enforcer-rules.version>1.0-alpha-5</extra-enforcer-rules.version>
         <foss-configs.version>1.2</foss-configs.version>
         <guava.version>14.0.1</guava.version>
         <gson.version>2.2.4</gson.version>
@@ -100,7 +100,7 @@
         <joda-time.joda-time-jsptags.version>1.1.1</joda-time.joda-time-jsptags.version>
         <org.joda.joda-beans.version>0.7</org.joda.joda-beans.version>
         <org.joda.joda-convert.version>1.3.1</org.joda.joda-convert.version>
-        <org.joda.joda-money.version>0.8</org.joda.joda-money.version>
+        <org.joda.joda-money.version>0.9</org.joda.joda-money.version>
         <org.joda.joda-primitives.version>1.0</org.joda.joda-primitives.version>
         <org.slf4j.version>1.7.5</org.slf4j.version>
         <plexus-component-metadata.version>1.5.5</plexus-component-metadata.version>
