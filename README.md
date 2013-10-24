@@ -1,4 +1,0 @@
-foss-parent
-===========
-
-Parent POM for 1-and-1 open source projects using Maven.
