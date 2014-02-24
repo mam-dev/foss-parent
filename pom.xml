@@ -468,6 +468,7 @@
                             <configuration>
                                 <!-- Needed when no SCM configuration is given. -->
                                 <revisionOnScmFailure>UNKNOW_REVISION</revisionOnScmFailure>
+                                <getRevisionOnlyOnce>true</getRevisionOnlyOnce>
                             </configuration>
                         </execution>
                     </executions>
