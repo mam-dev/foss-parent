@@ -3,7 +3,7 @@ Parent POM for 1-and-1 open source projects.
 Contains common configuration for projects that use github and Sonatype OSS Repository Hosting.
 Default License is Apache 2.0.
 
-Latest Jenkins-Build: [![Build Status](http://huschteguzzel.de/hudson/job/oneandone-foss-parent/badge/icon)](http://huschteguzzel.de/hudson/job/oneandone-foss-parent/)
+Latest Jenkins-Build: [![Build Status](https://huschteguzzel.de/hudson/job/oneandone-foss-parent/badge/icon)](https://huschteguzzel.de/hudson/job/oneandone-foss-parent/)
 
 Changelog
 ---------
