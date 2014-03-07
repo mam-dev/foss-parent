@@ -65,7 +65,7 @@
         <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
         <maven-jxr-plugin.version>2.4</maven-jxr-plugin.version>
         <maven-project-info-reports-plugin.version>2.7</maven-project-info-reports-plugin.version>
-        <maven-release-plugin.version>2.4.2</maven-release-plugin.version>
+        <maven-release-plugin.version>2.5</maven-release-plugin.version>
         <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
         <maven-site-plugin.version>3.3</maven-site-plugin.version>
         <maven-scm-plugin.version>1.9</maven-scm-plugin.version>
