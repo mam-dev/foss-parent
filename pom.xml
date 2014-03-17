@@ -773,7 +773,6 @@
                     <version>${maven-pmd-plugin.version}</version>
                     <configuration>
                         <linkXRef>true</linkXRef>
-                        <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
                         <minimumTokens>100</minimumTokens>
                         <targetJdk>${oneandone.java.target}</targetJdk>
                     </configuration>
@@ -944,7 +943,6 @@
                 <version>${maven-pmd-plugin.version}</version>
                 <configuration>
                     <linkXRef>true</linkXRef>
-                    <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
                     <minimumTokens>100</minimumTokens>
                     <targetJdk>${oneandone.java.target}</targetJdk>
                 </configuration>
