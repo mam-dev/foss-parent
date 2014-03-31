@@ -80,9 +80,8 @@ Deploy site to github
 To deploy a site to github using [maven-scm-publish-plugin](http://maven.apache.org/plugins/maven-scm-publish-plugin/):
 
 * Add a new branch `gh-pages` [manually](https://help.github.com/articles/creating-project-pages-manually).
-* Introduce a property `scmpublish.content` (normally `<scmpublish.content>target/staging/ARTIFACTID</scmpublish.content>`).
 * Add `src/site/resources/.nojekyll` [to add hidden files (e.g. for jacoco)](http://illegalstateexception.blogspot.de/2013/01/publishing-maven-site-having-jacoco.html) as well.
-* Run `mvn clean verify site site:stage scm-publish:publish-scm`.
+* Run `mvn clean verify site site:stage scm-publish:publish-scm -Dscmpublish.content=target/staging/ARTIFACTID`.
 
 
 Adjust license headers
