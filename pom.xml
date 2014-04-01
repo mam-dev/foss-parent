@@ -83,7 +83,7 @@
         <findbugs-maven-plugin.excludeFilterFile>net/oneandone/maven/poms/fossconfigs/findbugs-exclude.xml</findbugs-maven-plugin.excludeFilterFile>
         <github-site-plugin.version>0.9</github-site-plugin.version>
         <github.global.server>github</github.global.server>
-        <jacoco-maven-plugin.version>0.6.5.201403032054</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.7.0.201403182114</jacoco-maven-plugin.version>
         <jdepend-maven-plugin.version>2.0-beta-2</jdepend-maven-plugin.version>
         <velocity-maven-plugin.version>0.3.0</velocity-maven-plugin.version>
         <versions-maven-plugin.version>2.1</versions-maven-plugin.version>
