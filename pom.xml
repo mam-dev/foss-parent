@@ -354,7 +354,7 @@
     </issueManagement>
     <ciManagement>
         <system>Jenkins</system>
-        <url>http://huschteguzzel.de/hudson/job/oneandone-foss-parent/</url>
+        <url>https://huschteguzzel.de/hudson/job/oneandone-foss-parent/</url>
     </ciManagement>
     <developers>
         <developer>
