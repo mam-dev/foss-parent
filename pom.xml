@@ -76,7 +76,6 @@
         <!-- non apache plugin versions and configurations, please sort alphabetically -->
         <maven-license-plugin.version>1.10.b1</maven-license-plugin.version>
         <maven-license-plugin.header>/net/oneandone/maven/poms/fossconfigs/license-header.txt</maven-license-plugin.header>
-        <attach-qar-maven-plugin.version>1.2</attach-qar-maven-plugin.version>
         <buildnumber-maven-plugin.version>1.3</buildnumber-maven-plugin.version>
         <cobertura-maven-plugin.version>2.6</cobertura-maven-plugin.version>
         <findbugs-maven-plugin.version>2.5.3</findbugs-maven-plugin.version>
@@ -821,19 +820,6 @@
                         <generateBackupPoms>false</generateBackupPoms>
                     </configuration>
                 </plugin>
-                <plugin>
-                    <groupId>net.oneandone.maven.plugins</groupId>
-                    <artifactId>attach-qar-maven-plugin</artifactId>
-                    <version>${attach-qar-maven-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>default-attach</id>
-                            <goals>
-                                <goal>attach</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
@@ -889,10 +875,6 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>net.oneandone.maven.plugins</groupId>
-                <artifactId>attach-qar-maven-plugin</artifactId>
             </plugin>
         </plugins>
         <extensions>
