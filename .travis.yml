@@ -1,8 +1,8 @@
 language: java
 jdk:
   - oraclejdk7
-install: "mvn --errors --batch-mode validate dependency:go-offline"
-script: "mvn --errors --batch-mode -Dversions.skip=true clean verify site"
+install: "mvn --show-version --errors --batch-mode validate dependency:go-offline"
+script: "mvn --show-version --errors --batch-mode -Dversions.skip=true clean verify site"
 cache:
     directories:
     - $HOME/.m2
