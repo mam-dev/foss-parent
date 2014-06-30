@@ -37,8 +37,8 @@
         <netbeans.checkstyle.format>true</netbeans.checkstyle.format>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <oneandone.java.source>1.6</oneandone.java.source>
-        <oneandone.java.target>1.6</oneandone.java.target>
+        <oneandone.java.source>1.7</oneandone.java.source>
+        <oneandone.java.target>1.7</oneandone.java.target>
         <scmpublish.content>target/staging</scmpublish.content>
 
         <!-- apache plugin versions and configurations, please sort alphabetically -->
