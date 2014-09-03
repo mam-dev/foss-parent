@@ -1,44 +1,51 @@
 #!/usr/bin/env python
-import urllib
+import contextlib
 import json
 import os
 import sys
+import urllib
 
 ORG_AND_PROJECT = "1and1/foss-parent"
 
+
 class GithubApi(object):
 
-    def __init__(self, orgAndProject, milestone):
-        self.baseUrl = "https://api.github.com/repos/%s" % orgAndProject
-        self.milestone = milestone
-        self._fetchMilestoneInfo()
+    def __init__(self, org_and_project, milestone):
+        self._base_url = "https://api.github.com/repos/%s" % org_and_project
+        self._milestone = milestone
+        self.milestone_info = None
+        self._fetch_milestone_info()
 
-    def retrieveOpenIssues(self):
-        return json.load(urllib.urlopen("%s/issues?milestone=%s&state=open" % (self.baseUrl, self.milestone)))
+    def retrieve_open_issues(self):
+        milestone_ = "%s/issues?milestone=%s&state=open" % (self._base_url, self._milestone)
+        with contextlib.closing(urllib.urlopen(milestone_)) as h:
+            return json.load(h)
 
-    def _fetchMilestoneInfo(self):
-        self.milestoneInfo = json.load(urllib.urlopen("%s/milestones/%s" % (self.baseUrl, self.milestone)))
+    def _fetch_milestone_info(self):
+        milestones = "%s/milestones/%s" % (self._base_url, self._milestone)
+        with contextlib.closing(urllib.urlopen(milestones)) as h:
+            self.milestone_info = json.load(h)
 
-    def hasOpenIssues(self):
-        return self.milestoneInfo["open_issues"] > 0
+    def has_open_issues(self):
+        return self.milestone_info["open_issues"] > 0
 
 if __name__ == "__main__":
     if os.environ.get("GPG_AGENT_INFO") is None:
         sys.exit("GPG_AGENT not started")
     if len(sys.argv) != 3:
         sys.exit("Usage: %s previousVersion milestone, e.g. %s 1.3.10 20" % (sys.argv[0], sys.argv[0]))
-    previousVersion = sys.argv[1]
+    previous_version = sys.argv[1]
     milestone = sys.argv[2]
     gh = GithubApi(ORG_AND_PROJECT, milestone)
-    if gh.hasOpenIssues():
-        openIssues = gh.retrieveOpenIssues()
+    if gh.has_open_issues():
+        open_issues = gh.retrieve_open_issues()
         sys.exit("Found open issues on github for milestone %s (title: %s):\n%s" % (
             milestone,
-            gh.milestoneInfo["title"],
-            "\n".join("#%(number)d %(title)s" % issue for issue in openIssues)
+            gh.milestone_info["title"],
+            "\n".join("#%(number)d %(title)s" % issue for issue in open_issues)
             )
         )
-    releaseVersion = gh.milestoneInfo["title"]
+    releaseVersion = gh.milestone_info["title"]
     cmd = """\
 mvn \
 -Darguments="-DpreviousVersion=%(previousVersion)s -Dmilestone=%(milestone)s" \
