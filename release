@@ -45,12 +45,12 @@ if __name__ == "__main__":
             "\n".join("#%(number)d %(title)s" % issue for issue in open_issues)
             )
         )
-    releaseVersion = gh.milestone_info["title"]
+    release_version = gh.milestone_info["title"]
     cmd = """\
 mvn \
--Darguments="-DpreviousVersion=%(previousVersion)s -Dmilestone=%(milestone)s" \
+-Darguments="-DpreviousVersion=%(previous_version)s -Dmilestone=%(milestone)s" \
 -DdevelopmentVersion=1-SNAPSHOT \
--DreleaseVersion=%(releaseVersion)s \
+-DreleaseVersion=%(release_version)s \
 -DpreparationGoals="clean deploy changes:announcement-generate -DperformRelease=true" release:prepare
     """ % locals()
     raw_input("About to execute:\n%s\nHit enter to proceed, CTRL+D to cancel" % cmd)
