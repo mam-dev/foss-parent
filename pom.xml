@@ -814,9 +814,16 @@
                         <excludes>
                             <!-- No we do not want 99.0-does-not-exist -->
                             <exclude>commons-logging:commons-logging:*:99.0-does-not-exist</exclude>
-                            <!-- No we do not want a beta -->
-                            <exclude>com.google.inject:guice:*:4.0-beta</exclude>
+                            <!-- No we do not want a beta or alpha-->
+                            <exclude>junit:junit:*:*-beta*</exclude>
+                            <exclude>org.apache.httpcomponents:*:*:4.4-alpha*</exclude>
                         </excludes>
+                        <properties>
+                            <property>
+                                <name>guice.version</name>
+                                <version>[3.0,4.0-!)</version>
+                            </property>
+                        </properties>
                         <generateBackupPoms>false</generateBackupPoms>
                     </configuration>
                 </plugin>
