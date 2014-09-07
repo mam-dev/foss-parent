@@ -822,6 +822,12 @@
                             <property>
                                 <name>guice.version</name>
                                 <version>[3.0,4.0-!)</version>
+                                <dependencies>
+                                    <dependency>
+                                        <groupId>com.google.inject</groupId>
+                                        <artifactId>guice</artifactId>
+                                    </dependency>
+                                </dependencies>
                             </property>
                         </properties>
                         <generateBackupPoms>false</generateBackupPoms>
