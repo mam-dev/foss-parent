@@ -959,13 +959,13 @@
                             <detectOfflineLinks>false</detectOfflineLinks>
                             <links>
                                 <link>http://docs.oracle.com/javase/6/docs/api/</link>
-                                <link>http://junit-team.github.com/junit/javadoc/latest/</link>
+                                <link>http://junit-team.github.io/junit/javadoc/latest/</link>
                                 <link>http://www.slf4j.org/apidocs/</link>
                             </links>
                         </configuration>
                         <reports>
-                            <report>javadoc</report>
-                            <report>test-javadoc</report>
+                            <report>javadoc-no-fork</report>
+                            <report>test-javadoc-no-fork</report>
                         </reports>
                     </reportSet>
                 </reportSets>
