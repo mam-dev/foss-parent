@@ -817,6 +817,7 @@
                             <!-- No we do not want a beta or alpha-->
                             <exclude>junit:junit:*:*-beta*</exclude>
                             <exclude>org.apache.httpcomponents:*:*:4.4-alpha*</exclude>
+                            <exclude>org.apache.httpcomponents:*:*:4.4-beta*</exclude>
                         </excludes>
                         <properties>
                             <property>
