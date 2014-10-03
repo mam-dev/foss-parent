@@ -818,6 +818,8 @@
                             <exclude>junit:junit:*:*-beta*</exclude>
                             <exclude>org.apache.httpcomponents:*:*:4.4-alpha*</exclude>
                             <exclude>org.apache.httpcomponents:*:*:4.4-beta*</exclude>
+                            <!-- do not include artifacts from atlassian -->
+                            <exclude>*:*:*:*atlassian*</exclude>
                         </excludes>
                         <properties>
                             <property>
