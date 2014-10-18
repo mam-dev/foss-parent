@@ -849,6 +849,11 @@
                     <suppressionsLocation>${maven-checkstyle-plugin.suppressionsLocation}</suppressionsLocation>
                 </configuration>
                 <dependencies>
+                    <dependency><!-- needed for JDK8 -->
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>5.9</version>
+                    </dependency>
                     <dependency>
                         <groupId>net.oneandone.maven.poms</groupId>
                         <artifactId>foss-configs</artifactId>
