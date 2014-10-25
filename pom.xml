@@ -102,7 +102,7 @@
         <org.joda.joda-money.version>0.9.1</org.joda.joda-money.version>
         <org.joda.joda-primitives.version>1.0</org.joda.joda-primitives.version>
         <org.slf4j.version>1.7.7</org.slf4j.version>
-        <plexus-component-metadata.version>1.5.5</plexus-component-metadata.version>
+        <plexus-component-metadata.version>1.5.6</plexus-component-metadata.version>
 
         <!-- define coverage ratios used during jacoco-maven-plugin:check -->
         <jacoco.check.classRatio>0.90</jacoco.check.classRatio>
@@ -269,7 +269,7 @@
             <dependency>
                 <groupId>org.codehaus.plexus</groupId>
                 <artifactId>plexus-component-annotations</artifactId>
-                <version>1.5.5</version>
+                <version>1.5.6</version>
                 <exclusions>
                     <exclusion>
                         <groupId>junit</groupId>
@@ -320,7 +320,7 @@
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpcore</artifactId>
-                <version>4.3.2</version>
+                <version>4.3.3</version>
             </dependency>
 
             <!-- javax -->
