@@ -23,7 +23,7 @@
     <inceptionYear>2012</inceptionYear>
 
     <prerequisites>
-        <maven>3.0.4</maven>
+        <maven>3.2.3</maven>
     </prerequisites>
 
     <scm>
@@ -586,7 +586,7 @@
                     <configuration>
                         <quiet>true</quiet>
                         <links>
-                            <link>http://docs.oracle.com/javase/6/docs/api/</link>
+                            <link>http://docs.oracle.com/javase/7/docs/api/</link>
                             <link>http://junit-team.github.io/junit/javadoc/latest/</link>
                             <link>http://www.slf4j.org/apidocs/</link>
                         </links>
@@ -1127,7 +1127,7 @@
                                     <detectLinks>false</detectLinks>
                                     <detectOfflineLinks>false</detectOfflineLinks>
                                     <links>
-                                        <link>http://docs.oracle.com/javase/6/docs/api/</link>
+                                        <link>http://docs.oracle.com/javase/7/docs/api/</link>
                                         <link>http://junit-team.github.io/junit/javadoc/latest/</link>
                                         <link>http://www.slf4j.org/apidocs/</link>
                                     </links>
