@@ -39,6 +39,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <oneandone.java.source>1.7</oneandone.java.source>
         <oneandone.java.target>1.7</oneandone.java.target>
+        <oneandone.java.docversion>7</oneandone.java.docversion>
         <scmpublish.content>target/staging</scmpublish.content>
 
         <!-- apache plugin versions and configurations, please sort alphabetically -->
@@ -586,7 +587,7 @@
                     <configuration>
                         <quiet>true</quiet>
                         <links>
-                            <link>http://docs.oracle.com/javase/7/docs/api/</link>
+                            <link>http://docs.oracle.com/javase/${oneandone.java.docversion}/docs/api/</link>
                             <link>http://junit-team.github.io/junit/javadoc/latest/</link>
                             <link>http://www.slf4j.org/apidocs/</link>
                         </links>
@@ -1127,7 +1128,7 @@
                                     <detectLinks>false</detectLinks>
                                     <detectOfflineLinks>false</detectOfflineLinks>
                                     <links>
-                                        <link>http://docs.oracle.com/javase/7/docs/api/</link>
+                                        <link>http://docs.oracle.com/javase/${oneandone.java.docversion}/docs/api/</link>
                                         <link>http://junit-team.github.io/junit/javadoc/latest/</link>
                                         <link>http://www.slf4j.org/apidocs/</link>
                                     </links>
