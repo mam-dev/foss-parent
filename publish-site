@@ -1,2 +1,2 @@
 #!/bin/sh
-mvn clean verify site site:stage scm-publish:publish-scm
+mvn -P foss-parent-verification clean verify site site:stage scm-publish:publish-scm
