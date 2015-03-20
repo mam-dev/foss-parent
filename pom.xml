@@ -1145,6 +1145,14 @@
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>jdepend-maven-plugin</artifactId>
                         <version>${jdepend-maven-plugin.version}</version>
+                        <reportSets>
+                            <reportSet>
+                                <inherited>true</inherited>
+                                <reports>
+                                    <report>generate-no-fork</report>
+                                </reports>
+                            </reportSet>
+                        </reportSets>
                     </plugin>
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
