@@ -51,7 +51,8 @@ mvn \
 -Darguments="-DpreviousVersion=%(previous_version)s -Dmilestone=%(milestone)s" \
 -DdevelopmentVersion=1-SNAPSHOT \
 -DreleaseVersion=%(release_version)s \
--DpreparationGoals="clean deploy changes:announcement-generate -DperformRelease=true" release:prepare
+-Dgoals="deploy changes:announcement-generate" \
+release:prepare release:perform
     """ % locals()
     raw_input("About to execute:\n%s\nHit enter to proceed, CTRL+D to cancel" % cmd)
     os.system(cmd)
