@@ -43,7 +43,7 @@
         <scmpublish.content>target/staging</scmpublish.content>
 
         <!-- used during release:prepare and release:perform -->
-        <preparationGoals>validate</preparationGoals>
+        <preparationGoals>clean</preparationGoals>
         <goals>deploy</goals>
 
         <!-- apache plugin versions and configurations, please sort alphabetically -->
