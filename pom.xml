@@ -226,7 +226,8 @@
                 <groupId>commons-logging</groupId>
                 <artifactId>commons-logging</artifactId>
                 <version>1.2</version>
-                <scope>provided</scope><!-- by jcl-over-slf4j -->
+                <!-- by jcl-over-slf4j -->
+                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>ch.qos.logback</groupId>
@@ -310,7 +311,8 @@
                 <artifactId>httpclient</artifactId>
                 <version>4.4.1</version>
                 <exclusions>
-                    <exclusion><!-- Always depend on jcl-over-slf4j instead -->
+                    <exclusion>
+                        <!-- Always depend on jcl-over-slf4j instead -->
                         <artifactId>commons-logging</artifactId>
                         <groupId>commons-logging</groupId>
                     </exclusion>
@@ -401,6 +403,26 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
                     <version>${maven-checkstyle-plugin.version}</version>
+                    <configuration>
+                        <enableRulesSummary>false</enableRulesSummary>
+                        <configLocation>${maven-checkstyle-plugin.configLocation}</configLocation>
+                        <suppressionsLocation>${maven-checkstyle-plugin.suppressionsLocation}</suppressionsLocation>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>net.oneandone.maven.poms</groupId>
+                            <artifactId>foss-configs</artifactId>
+                            <version>${foss-configs.version}</version>
+                        </dependency>
+                    </dependencies>
+                    <executions>
+                        <execution>
+                            <id>default-check</id>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -704,6 +726,14 @@
                         <debug>false</debug>
                         <relaxed>false</relaxed>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <id>default-check</id>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>net.rumati.maven.plugins</groupId>
@@ -770,6 +800,20 @@
                         <targetJdk>${oneandone.java.target}</targetJdk>
                         <skipEmptyReport>false</skipEmptyReport>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <id>default-check</id>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>default-cpd-check</id>
+                            <goals>
+                                <goal>cpd-check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.jacoco</groupId>
@@ -790,6 +834,38 @@
                             </goals>
                         </execution>
                     </executions>
+                    <configuration>
+                        <rules>
+                            <rule>
+                                <limits>
+                                    <limit>
+                                        <counter>CLASS</counter>
+                                        <minimum>${jacoco.check.classRatio}</minimum>
+                                    </limit>
+                                    <limit>
+                                        <counter>INSTRUCTION</counter>
+                                        <minimum>${jacoco.check.instructionRatio}</minimum>
+                                    </limit>
+                                    <limit>
+                                        <counter>METHOD</counter>
+                                        <minimum>${jacoco.check.methodRatio}</minimum>
+                                    </limit>
+                                    <limit>
+                                        <counter>BRANCH</counter>
+                                        <minimum>${jacoco.check.branchRatio}</minimum>
+                                    </limit>
+                                    <limit>
+                                        <counter>COMPLEXITY</counter>
+                                        <minimum>${jacoco.check.complexityRatio}</minimum>
+                                    </limit>
+                                    <limit>
+                                        <counter>LINE</counter>
+                                        <minimum>${jacoco.check.lineRatio}</minimum>
+                                    </limit>
+                                </limits>
+                            </rule>
+                        </rules>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>com.github.github</groupId>
@@ -844,7 +920,8 @@
             </plugin>
         </plugins>
         <extensions>
-            <extension><!-- needed for findbugs -->
+            <!-- needed for findbugs -->
+            <extension>
                 <groupId>net.oneandone.maven.poms</groupId>
                 <artifactId>foss-configs</artifactId>
                 <version>${foss-configs.version}</version>
@@ -933,34 +1010,9 @@
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>buildnumber-maven-plugin</artifactId>
                     </plugin>
-                    <plugin><!-- putting this into pluginManagement does not work, report does not find config -->
+                    <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-checkstyle-plugin</artifactId>
-                        <configuration>
-                            <enableRulesSummary>false</enableRulesSummary>
-                            <configLocation>${maven-checkstyle-plugin.configLocation}</configLocation>
-                            <suppressionsLocation>${maven-checkstyle-plugin.suppressionsLocation}</suppressionsLocation>
-                        </configuration>
-                        <dependencies>
-                            <dependency><!-- needed for JDK8 -->
-                                <groupId>com.puppycrawl.tools</groupId>
-                                <artifactId>checkstyle</artifactId>
-                                <version>5.9</version>
-                            </dependency>
-                            <dependency>
-                                <groupId>net.oneandone.maven.poms</groupId>
-                                <artifactId>foss-configs</artifactId>
-                                <version>${foss-configs.version}</version>
-                            </dependency>
-                        </dependencies>
-                        <executions>
-                            <execution>
-                                <id>default-check</id>
-                                <goals>
-                                    <goal>check</goal>
-                                </goals>
-                            </execution>
-                        </executions>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -977,20 +1029,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-pmd-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>default-check</id>
-                                <goals>
-                                    <goal>check</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>default-cpd-check</id>
-                                <goals>
-                                    <goal>cpd-check</goal>
-                                </goals>
-                            </execution>
-                        </executions>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -1003,56 +1041,21 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>findbugs-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>default-check</id>
-                                <goals>
-                                    <goal>check</goal>
-                                </goals>
-                            </execution>
-                        </executions>
                     </plugin>
                     <plugin>
                         <groupId>org.jacoco</groupId>
                         <artifactId>jacoco-maven-plugin</artifactId>
+                        <!--
+                            We want to have coverage all the time, so
+                            as an exception put an execution here in
+                            the profile.
+                        -->
                         <executions>
                             <execution>
                                 <id>default-check</id>
                                 <goals>
                                     <goal>check</goal>
                                 </goals>
-                                <configuration>
-                                    <rules>
-                                        <rule>
-                                            <limits>
-                                                <limit>
-                                                    <counter>CLASS</counter>
-                                                    <minimum>${jacoco.check.classRatio}</minimum>
-                                                </limit>
-                                                <limit>
-                                                    <counter>INSTRUCTION</counter>
-                                                    <minimum>${jacoco.check.instructionRatio}</minimum>
-                                                </limit>
-                                                <limit>
-                                                    <counter>METHOD</counter>
-                                                    <minimum>${jacoco.check.methodRatio}</minimum>
-                                                </limit>
-                                                <limit>
-                                                    <counter>BRANCH</counter>
-                                                    <minimum>${jacoco.check.branchRatio}</minimum>
-                                                </limit>
-                                                <limit>
-                                                    <counter>COMPLEXITY</counter>
-                                                    <minimum>${jacoco.check.complexityRatio}</minimum>
-                                                </limit>
-                                                <limit>
-                                                    <counter>LINE</counter>
-                                                    <minimum>${jacoco.check.lineRatio}</minimum>
-                                                </limit>
-                                            </limits>
-                                        </rule>
-                                    </rules>
-                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
