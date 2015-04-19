@@ -618,6 +618,11 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>${maven-project-info-reports-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-changes-plugin</artifactId>
                     <version>${maven-changes-plugin.version}</version>
                     <executions>
@@ -907,6 +912,11 @@
                         <generateBackupPoms>false</generateBackupPoms>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>jdepend-maven-plugin</artifactId>
+                    <version>${jdepend-maven-plugin.version}</version>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
@@ -1066,17 +1076,14 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-project-info-reports-plugin</artifactId>
-                        <version>${maven-project-info-reports-plugin.version}</version>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-jxr-plugin</artifactId>
-                        <version>${maven-jxr-plugin.version}</version>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-changes-plugin</artifactId>
-                        <version>${maven-changes-plugin.version}</version>
                         <reportSets>
                             <reportSet>
                                 <reports>
@@ -1088,7 +1095,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-checkstyle-plugin</artifactId>
-                        <version>${maven-checkstyle-plugin.version}</version>
                         <configuration>
                             <outputFileFormat>xml</outputFileFormat>
                             <enableRulesSummary>false</enableRulesSummary>
@@ -1099,7 +1105,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-pmd-plugin</artifactId>
-                        <version>${maven-pmd-plugin.version}</version>
                         <configuration>
                             <linkXRef>true</linkXRef>
                             <minimumTokens>100</minimumTokens>
@@ -1110,7 +1115,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>${maven-javadoc-plugin.version}</version>
                         <reportSets>
                             <reportSet>
                                 <id>default</id>
@@ -1135,7 +1139,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-report-plugin</artifactId>
-                        <version>${maven-surefire-plugin.version}</version>
                         <reportSets>
                             <reportSet>
                                 <inherited>true</inherited>
@@ -1149,7 +1152,6 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>jdepend-maven-plugin</artifactId>
-                        <version>${jdepend-maven-plugin.version}</version>
                         <reportSets>
                             <reportSet>
                                 <inherited>true</inherited>
@@ -1162,7 +1164,6 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>findbugs-maven-plugin</artifactId>
-                        <version>${findbugs-maven-plugin.version}</version>
                         <configuration>
                             <excludeFilterFile>${findbugs-maven-plugin.excludeFilterFile}</excludeFilterFile>
                             <xmlOutput>true</xmlOutput>
@@ -1175,12 +1176,10 @@
                     <plugin>
                         <groupId>org.jacoco</groupId>
                         <artifactId>jacoco-maven-plugin</artifactId>
-                        <version>${jacoco-maven-plugin.version}</version>
                     </plugin>
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>versions-maven-plugin</artifactId>
-                        <version>${versions-maven-plugin.version}</version>
                     </plugin>
                 </plugins>
             </reporting>
