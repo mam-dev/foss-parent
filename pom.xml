@@ -46,6 +46,13 @@
         <preparationGoals>clean</preparationGoals>
         <goals>deploy</goals>
 
+        <!-- installAtEnd and deployAtEnd, see
+        https://maven.apache.org/plugins/maven-deploy-plugin/deploy-mojo.html#deployAtEnd and
+        https://maven.apache.org/plugins/maven-install-plugin/install-mojo.html#installAtEnd
+        -->
+        <installAtEnd>true</installAtEnd>
+        <deployAtEnd>true</deployAtEnd>
+
         <!-- apache plugin versions and configurations, please sort alphabetically -->
         <maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
         <maven-assembly-plugin.version>2.5.3</maven-assembly-plugin.version>
