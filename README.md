@@ -51,7 +51,7 @@ Rules for versions
 Releasing a project
 -------------------
 
-... to [Maven Central](http://maven.apache.org/guides/mini/guide-central-repository-upload.html) via [Sonatype OSS Repository Hosting](https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide):
+... to [Maven Central](http://maven.apache.org/guides/mini/guide-central-repository-upload.html) via [Sonatype OSS Repository Hosting](http://central.sonatype.org/pages/ossrh-guide.html):
 
 * add the following to your settings:
 
