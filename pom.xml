@@ -660,10 +660,10 @@
                                 <findAllDuplicates>true</findAllDuplicates>
                             </banDuplicateClasses>
                             <requireMavenVersion>
-                                <version>[3.0.4,)</version>
+                                <version>[3.2.5,)</version>
                             </requireMavenVersion>
                             <requireJavaVersion>
-                                <version>1.5</version>
+                                <version>1.7</version>
                             </requireJavaVersion>
                             <requireNoRepositories />
                             <requireReleaseDeps>
