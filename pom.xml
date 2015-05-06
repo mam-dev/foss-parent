@@ -365,8 +365,8 @@
         <url>https://github.com/1and1/foss-parent/issues/</url>
     </issueManagement>
     <ciManagement>
-        <system>Jenkins</system>
-        <url>https://huschteguzzel.de/hudson/job/oneandone-foss-parent/</url>
+        <system>Travis</system>
+        <url>https://travis-ci.org/1and1/foss-parent</url>
     </ciManagement>
     <developers>
         <developer>
