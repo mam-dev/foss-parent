@@ -46,6 +46,9 @@
         <preparationGoals>clean</preparationGoals>
         <goals>deploy</goals>
 
+        <!-- configure git host name with a property -->
+        <gitHostName>github.com</gitHostName>
+
         <!-- installAtEnd and deployAtEnd, see
         https://maven.apache.org/plugins/maven-deploy-plugin/deploy-mojo.html#deployAtEnd and
         https://maven.apache.org/plugins/maven-install-plugin/install-mojo.html#installAtEnd
@@ -686,8 +689,9 @@
                             <requireProperty>
                                 <property>project.scm.developerConnection</property>
                                 <message>"project.scm.developerConnection must be specified."</message>
-                                <regex>scm:git:ssh://git@github.com/.*$</regex>
-                                <regexMessage>"project.scm.developerConnection must start with scm:git:ssh://git@github.com/"</regexMessage>
+                                <regex>scm:git:ssh://git@${gitHostName}/.*$</regex>
+                                <regexMessage>"project.scm.developerConnection must start with
+                                    scm:git:ssh://git@${gitHostName}/"</regexMessage>
                             </requireProperty>
                             <DependencyConvergence />
                         </rules>
