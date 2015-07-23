@@ -9,7 +9,7 @@
 
     <description>
         Parent POM for 1-and-1 open source projects.
-        Defines oftenly used dependencies as well as plugins and their versions.
+        Defines often used dependencies and plugins.
     </description>
 
     <url>http://1and1.github.io/foss-parent</url>
