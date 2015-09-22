@@ -1,4 +1,5 @@
 language: java
+sudo: no
 env: JOB_URL=http://jenkins.example.com/ci/
 jdk:
   - oraclejdk7
