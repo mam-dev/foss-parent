@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.2.5.RELEASE</version>
+    </parent>
     <groupId>net.oneandone.maven.poms</groupId>
-    <artifactId>foss-parent</artifactId>
+    <artifactId>foss-parent-spring-boot</artifactId>
     <version>1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>1-and-1 :: FOSS parent pom</name>
@@ -25,9 +30,7 @@
     <prerequisites>
         <maven>3.2.3</maven>
     </prerequisites>
-    <modules>
-        <module>foss-parent-spring-boot</module>
-    </modules>
+
     <scm>
         <connection>scm:git:git://github.com/1and1/foss-parent.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/1and1/foss-parent.git</developerConnection>
