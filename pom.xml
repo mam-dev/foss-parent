@@ -897,16 +897,16 @@
                         <allowMajorUpdates>false</allowMajorUpdates>
                         <excludes>
                             <!-- No we do not want 99.0-does-not-exist -->
-                            <exclude>commons-logging:commons-logging:*:99.0-does-not-exist</exclude>
+                            <exclude>commons-logging:commons-logging:*:*:99.0-does-not-exist</exclude>
                             <!-- No we do not want a beta or alpha-->
                             <exclude>junit:junit:*:*-beta*</exclude>
-                            <exclude>org.apache.httpcomponents:*:*:4.4-alpha*</exclude>
-                            <exclude>org.apache.httpcomponents:*:*:4.4-beta*</exclude>
-                            <exclude>org.mockito:*:*:*-beta*</exclude>
+                            <exclude>org.apache.httpcomponents:*:*:*:4.4-alpha*</exclude>
+                            <exclude>org.apache.httpcomponents:*:*:*:4.4-beta*</exclude>
+                            <exclude>org.mockito:*:*:*:*-beta*</exclude>
                             <!-- do not include artifacts from atlassian -->
-                            <exclude>*:*:*:*atlassian*</exclude>
+                            <exclude>*:*:*:*:*atlassian*</exclude>
                             <!-- sonar-maven-plugin 2.7 does not respect properties set in the POM https://jira.sonarsource.com/browse/MSONAR-129 -->
-                            <exclude>org.codehaus.mojo:sonar-maven-plugin:*:2.7</exclude>
+                            <exclude>org.codehaus.mojo:sonar-maven-plugin:*:*:2.7</exclude>
                         </excludes>
                         <properties>
                             <property>
