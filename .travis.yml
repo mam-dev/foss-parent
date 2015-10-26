@@ -5,7 +5,7 @@ jdk:
   - oraclejdk7
   - oraclejdk8
 install: "mvn --activate-profiles foss-parent-verification --show-version --errors --batch-mode validate dependency:go-offline"
-script: "mvn --activate-profiles foss-parent-verification --show-version --errors --batch-mode -Dversions.skip=true clean verify site"
+script: 'env MAVEN_OPTS="-Xms64m -Xmx256m -XX:MaxPermSize=192m -Djava.awt.headless=true" mvn --activate-profiles foss-parent-verification --show-version --errors --batch-mode -Dversions.skip=true clean verify site'
 cache:
     directories:
     - $HOME/.m2
