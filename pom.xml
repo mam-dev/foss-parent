@@ -101,6 +101,8 @@
         <velocity-maven-plugin.version>0.3.1</velocity-maven-plugin.version>
         <versions-maven-plugin.version>2.2</versions-maven-plugin.version>
         <sonar-maven-plugin.version>2.6</sonar-maven-plugin.version>
+        <gmavenplus-plugin.version>1.5</gmavenplus-plugin.version>
+        <jgitflow-maven-plugin.version>1.0-m5.1</jgitflow-maven-plugin.version>
 
         <!-- non plugin versions, please sort alphabetically -->
         <doxia-module-markdown.version>1.6</doxia-module-markdown.version>
@@ -881,6 +883,30 @@
                     <configuration>
                         <message>Creating site for ${project.version}</message>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.gmavenplus</groupId>
+                    <artifactId>gmavenplus-plugin</artifactId>
+                    <version>${gmavenplus-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>default-addTestSources</id>
+                            <goals>
+                                <goal>addTestSources</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>default-testCompile</id>
+                            <goals>
+                                <goal>testCompile</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>external.atlassian.jgitflow</groupId>
+                    <artifactId>jgitflow-maven-plugin</artifactId>
+                    <version>${jgitflow-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
