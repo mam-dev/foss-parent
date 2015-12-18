@@ -907,6 +907,13 @@
                     <groupId>external.atlassian.jgitflow</groupId>
                     <artifactId>jgitflow-maven-plugin</artifactId>
                     <version>${jgitflow-maven-plugin.version}</version>
+                    <configuration>
+                        <enableSshAgent>true</enableSshAgent>
+                        <flowInitContext>
+                            <masterBranchName>production</masterBranchName>
+                            <developBranchName>master</developBranchName>
+                        </flowInitContext>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
