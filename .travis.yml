@@ -5,7 +5,7 @@ jdk:
   - oraclejdk7
   - oraclejdk8
 install:
-  - "mvn -N -q io.takari:maven:wrapper -Dmaven=3.3.3"
+  - "mvn -N -q io.takari:maven:wrapper -Dmaven=3.3.9"
   - "./mvnw --activate-profiles foss-parent-verification --show-version --errors --batch-mode -Dinvoker.skip=true -Dmaven.site.skip=true clean verify site dependency:go-offline"
 script: 'env MAVEN_OPTS="-Xms64m -Xmx256m -XX:MaxPermSize=192m -Djava.awt.headless=true" ./mvnw --activate-profiles foss-parent-verification --show-version --errors --batch-mode -Dversions.skip=true clean verify site'
 cache:
