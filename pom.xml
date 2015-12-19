@@ -1077,6 +1077,7 @@
                 </property>
             </activation>
             <properties>
+                <invoker.parallelThreads>4</invoker.parallelThreads>
                 <invoker.showErrors>true</invoker.showErrors>
                 <invoker.streamLogs>true</invoker.streamLogs>
             </properties>
