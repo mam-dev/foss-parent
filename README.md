@@ -51,28 +51,7 @@ Releasing a project
 
 ... to [Maven Central](http://maven.apache.org/guides/mini/guide-central-repository-upload.html) via [Sonatype OSS Repository Hosting](http://central.sonatype.org/pages/ossrh-guide.html):
 
-* add the following to your settings:
-
->     <settings>
->       <servers>
->         <server>
->           <id>sonatype-nexus-snapshots</id>
->           <username>sonatype-user</username>
->           <password>sonatype-pwd</password>
->         </server>
->         <server>
->           <id>sonatype-nexus-staging</id>
->           <username>sonatype-user</username>
->           <password>sonatype-pwd</password>
->         </server>
->       </servers>
->     </settings>
-
-* `mvn release:prepare`
-* `mvn release:perform`
-* close and release staging repository: https://oss.sonatype.org/index.html#stagingRepositories
-
-TODO: http://www.sonatype.com/books/nexus-book/reference/staging-sect-managing-plugin.html
+Please refer to the wiki page [Releasing an artifact to Maven Central Repo] (https://github.com/1and1/foss-parent/wiki/Releasing-an-artifact-to-Maven-Central-Repo)
 
 Deploy site to github
 ---------------------
