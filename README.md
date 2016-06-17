@@ -4,6 +4,7 @@ Contains common configuration for projects that use github and Sonatype OSS Repo
 Default License is Apache 2.0.
 
 Latest Travis-Build: [![Build Status](https://travis-ci.org/1and1/foss-parent.svg?branch=master)](https://travis-ci.org/1and1/foss-parent)
+Latest GitLab-Build: [![Build Status](https://gitlab.com/mfriedenhagen/foss-parent/badges/master/build.svg)](https://gitlab.com/mfriedenhagen/foss-parent/commits/master)
 
 Changelog
 ---------
@@ -51,7 +52,28 @@ Releasing a project
 
 ... to [Maven Central](http://maven.apache.org/guides/mini/guide-central-repository-upload.html) via [Sonatype OSS Repository Hosting](http://central.sonatype.org/pages/ossrh-guide.html):
 
-Please refer to the wiki page [Releasing an artifact to Maven Central Repo] (https://github.com/1and1/foss-parent/wiki/Releasing-an-artifact-to-Maven-Central-Repo)
+* add the following to your settings:
+
+>     <settings>
+>       <servers>
+>         <server>
+>           <id>sonatype-nexus-snapshots</id>
+>           <username>sonatype-user</username>
+>           <password>sonatype-pwd</password>
+>         </server>
+>         <server>
+>           <id>sonatype-nexus-staging</id>
+>           <username>sonatype-user</username>
+>           <password>sonatype-pwd</password>
+>         </server>
+>       </servers>
+>     </settings>
+
+* `mvn release:prepare`
+* `mvn release:perform`
+* close and release staging repository: https://oss.sonatype.org/index.html#stagingRepositories
+
+TODO: http://www.sonatype.com/books/nexus-book/reference/staging-sect-managing-plugin.html
 
 Deploy site to github
 ---------------------
