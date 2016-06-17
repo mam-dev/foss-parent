@@ -32,7 +32,7 @@ assert new File( basedir, "target/site/xref/index.html" ).exists();
 assert new File( basedir, "target/apidocs/index.html" ).exists();
 assert new File( basedir, "target/site/apidocs/index.html" ).exists();
 
-if (System.getenv('CONTINUOUS_INTEGRATION') == null) {
+if (System.getenv('CI') == null) {
     assert new File( basedir, "target/site/github-report.html").exists();
 }
 
