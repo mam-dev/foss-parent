@@ -1072,7 +1072,7 @@
             <id>foss-parent-enable-invoker-log-output-on-travis</id>
             <activation>
                 <property>
-                    <name>env.CONTINUOUS_INTEGRATION</name>
+                    <name>env.CI</name>
                 </property>
             </activation>
             <properties>
@@ -1089,7 +1089,7 @@
             <id>foss-parent-enable-githubreport-when-not-on-travis</id>
             <activation>
                 <property>
-                    <name>!env.CONTINUOUS_INTEGRATION</name>
+                    <name>!env.CI</name>
                 </property>
             </activation>
             <reporting>

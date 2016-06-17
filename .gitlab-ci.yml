@@ -1,0 +1,58 @@
+variables:
+  MAVEN_OPTS: "-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN -Dorg.slf4j.simpleLogger.showDateTime=true -Djava.awt.headless=true"
+
+.validate: &validate
+  stage: build
+  script:
+    - 'mvn test-compile'
+  except:
+    - gh-pages
+  artifacts:
+    paths:
+      - "target/*"
+
+.test: &test
+  stage: test
+  script:
+    - 'mvn verify site site:stage'
+  except:
+    - gh-pages
+  
+before_script:
+  - uname -a
+
+validate:jdk7:
+  <<: *validate
+  image: maven:3.3.9-jdk-7
+
+validate:jdk8:
+  <<: *validate
+  image: maven:3.3.9-jdk-8
+
+test:jdk7:
+  <<: *test
+  image: maven:3.3.9-jdk-7
+  dependencies:
+    - validate:jdk7
+
+test:jdk8:
+  <<: *test
+  image: maven:3.3.9-jdk-8
+  dependencies:
+    - validate:jdk8
+  artifacts:
+    paths:
+      - target/staging
+
+pages:
+  stage: deploy
+  script:
+    - mv target/staging public
+  dependencies:
+    - test:jdk8
+  artifacts:
+    paths:
+    - public
+  only:
+    - master
+
