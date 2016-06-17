@@ -28,7 +28,7 @@
             <leftColumnClass>span2</leftColumnClass>
             <bodyColumnClass>span10</bodyColumnClass>
             <gitHub>
-                <projectId>1and1/${project.artifactId}</projectId>
+                <projectId>1and1/${this.artifactId}</projectId>
                 <ribbonOrientation>right</ribbonOrientation>
                 <ribbonColor>gray</ribbonColor>
             </gitHub>
@@ -39,7 +39,7 @@
     <breadcrumbs>
       <item name="1&amp;1" href="http://blog.1und1.de/" />
       <item name="1&amp;1 FOSS" href="https://github.com/1and1/" />
-      <item name="${project.name}" href="${project.url}" />
+      <item name="${this.name}" href="${this.url}" />
     </breadcrumbs>
     <menu ref="parent" />
     <menu ref="modules" />
