@@ -58,6 +58,14 @@
             <artifactId>kotlintest</artifactId>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
     <developers>
         <developer>
             <id>mifr</id>
