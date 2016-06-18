@@ -3,8 +3,9 @@ Parent POM for 1-and-1 open source projects.
 Contains common configuration for projects that use github and Sonatype OSS Repository Hosting.
 Default License is Apache 2.0.
 
-Latest Travis-Build: [![Build Status](https://travis-ci.org/1and1/foss-parent.svg?branch=master)](https://travis-ci.org/1and1/foss-parent)
-Latest GitLab-Build: [![Build Status](https://gitlab.com/mfriedenhagen/foss-parent/badges/master/build.svg)](https://gitlab.com/mfriedenhagen/foss-parent/commits/master)
+Travis-Build: [![Build Status](https://travis-ci.org/1and1/foss-parent.svg?branch=master)](https://travis-ci.org/1and1/foss-parent)
+GitLab-Build: [![Build Status](https://gitlab.com/mfriedenhagen/foss-parent/badges/master/build.svg)](https://gitlab.com/mfriedenhagen/foss-parent/commits/master)
+[![GitHub license](https://img.shields.io/github/license/1and1/foss-parent.svg)]()
 
 Changelog
 ---------
