@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>@project.groupId@</groupId>
+        <artifactId>@project.artifactId@</artifactId>
+        <version>@project.version@</version>
+    </parent>
+    <artifactId>kotlin-project</artifactId>
+    <name>sample project for kotlin</name>
+
+    <description>Integration Test Project</description>
+
+    <url>https://github.com/1and1/${project.artifactId}/</url>
+
+    <properties>
+        <versions.skip>true</versions.skip>
+        <jacoco.skip>true</jacoco.skip>
+    </properties>
+
+    <organization>
+        <name>1&amp;1</name>
+        <url>https://1and1.github.com/</url>
+    </organization>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/1and1/foss-parent/issues</url>
+    </issueManagement>
+
+    <inceptionYear>2012</inceptionYear>
+    <scm>
+        <connection>scm:git:git://github.com/1and1/${project.artifactId}.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/1and1/${project.artifactId}.git</developerConnection>
+        <url>https://github.com/1and1/${project.artifactId}/</url>
+    </scm>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.hamcrest</groupId>
+                    <artifactId>hamcrest-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-runtime</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.kotlintest</groupId>
+            <artifactId>kotlintest</artifactId>
+        </dependency>
+    </dependencies>
+    <developers>
+        <developer>
+            <id>mifr</id>
+            <name>Mirko Friedenhagen</name>
+            <organization>1 &amp; 1 Internet AG</organization>
+            <organizationUrl>${project.url}</organizationUrl>
+            <url>http://github.com/mfriedenhagen/</url>
+            <timezone>+1</timezone>
+            <roles>
+                <role>developer</role>
+                <role>project lead</role>
+            </roles>
+        </developer>
+    </developers>
+</project>

@@ -120,6 +120,7 @@
         <org.joda.joda-primitives.version>1.0</org.joda.joda-primitives.version>
         <org.slf4j.version>1.7.21</org.slf4j.version>
         <plexus-component-metadata.version>1.7</plexus-component-metadata.version>
+        <kotlin.version>1.0.2-1</kotlin.version>
 
         <!-- define coverage ratios used during jacoco-maven-plugin:check -->
         <jacoco.check.classRatio>0.90</jacoco.check.classRatio>
@@ -365,6 +366,35 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>servlet-api</artifactId>
                 <version>3.0-alpha-1</version>
+            </dependency>
+
+            <!-- kotlin -->
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-reflect</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-runtime</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-test</artifactId>
+                <version>${kotlin.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.kotlintest</groupId>
+                <artifactId>kotlintest</artifactId>
+                <version>1.2.0</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -950,6 +980,27 @@
                         </properties>
                         <generateBackupPoms>false</generateBackupPoms>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.jetbrains.kotlin</groupId>
+                    <artifactId>kotlin-maven-plugin</artifactId>
+                    <version>${kotlin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>default-compile</id>
+                            <phase>compile</phase>
+                            <goals>
+                                <goal>compile</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>default-test-compile</id>
+                            <phase>test-compile</phase>
+                            <goals>
+                                <goal>test-compile</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>
