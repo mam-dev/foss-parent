@@ -29,6 +29,10 @@ validate:jdk8:
   <<: *validate
   image: maven:3.3.9-jdk-8
 
+validate:jdk8:3.4.0-SNAPSHOT:
+  <<: *validate
+  image: mfriedenhagen/maven:3.4.0-SNAPSHOT-jdk-8
+
 test:jdk7:
   <<: *test
   image: maven:3.3.9-jdk-7
@@ -43,6 +47,12 @@ test:jdk8:
   artifacts:
     paths:
       - target/staging
+
+test:jdk8:3.4.0-SNAPSHOT:
+  <<: *test
+  image: mfriedenhagen/maven:3.4.0-SNAPSHOT-jdk-8
+  dependencies:
+    - validate:jdk8:3.4.0-SNAPSHOT
 
 pages:
   stage: deploy
