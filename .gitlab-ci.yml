@@ -33,6 +33,10 @@ validate:jdk8:3.4.0-SNAPSHOT:
   <<: *validate
   image: mfriedenhagen/docker-maven:3.4.0-SNAPSHOT-jdk-8
 
+validate:jdk7:3.4.0-SNAPSHOT:
+  <<: *validate
+  image: mfriedenhagen/docker-maven:3.4.0-SNAPSHOT-jdk-7
+
 test:jdk7:
   <<: *test
   image: maven:3.3.9-jdk-7
@@ -53,6 +57,12 @@ test:jdk8:3.4.0-SNAPSHOT:
   image: mfriedenhagen/docker-maven:3.4.0-SNAPSHOT-jdk-8
   dependencies:
     - validate:jdk8:3.4.0-SNAPSHOT
+
+test:jdk7:3.4.0-SNAPSHOT:
+  <<: *test
+  image: mfriedenhagen/docker-maven:3.4.0-SNAPSHOT-jdk-7
+  dependencies:
+    - validate:jdk7:3.4.0-SNAPSHOT
 
 pages:
   stage: deploy
