@@ -257,8 +257,7 @@
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-core</artifactId>
                 <version>${logback.version}</version>
-                <!-- set to test as libraries should not include this -->
-                <scope>test</scope>
+                <!-- do not set scope to test because this might be a transitive dependency -->
             </dependency>
 
             <!-- maven plugin dependencies -->
