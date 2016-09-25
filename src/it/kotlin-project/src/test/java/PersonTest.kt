@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import io.kotlintest.specs.FlatSpec
+import io.kotlintest.specs.StringSpec
 
-class PersonTest : FlatSpec() {
+class PersonTest : StringSpec() {
     init {
-        "John Doe" should "have a name" {
+        "John Doe should have a name" {
             val sut = Person("John Doe")
             sut.name shouldEqual "John Doe"
         }
