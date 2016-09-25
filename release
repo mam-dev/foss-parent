@@ -51,9 +51,14 @@ mvn \
 -Darguments="-DpreviousVersion=%(previous_version)s -Dmilestone=%(milestone)s" \
 -DdevelopmentVersion=1-SNAPSHOT \
 -DreleaseVersion=%(release_version)s \
+-DpushChanges=false \
+-DlocalRepository=true \
 -Dgoals="deploy changes:announcement-generate" \
 release:prepare release:perform
     """ % locals()
     raw_input("About to execute:\n%s\nHit enter to proceed, CTRL+D to cancel" % cmd)
     os.system(cmd)
+    os.system("git push --tags")
     os.system("mvn release:clean")
+    os.system("git reset origin/master")
+    os.system("git checkout .")
