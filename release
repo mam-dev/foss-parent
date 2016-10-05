@@ -5,8 +5,7 @@ import os
 import sys
 import urllib
 
-ORG_AND_PROJECT = "1and1/foss-parent"
-
+ORG_AND_PROJECT = os.environ.get("ORG_AND_PROJECT", "1and1/foss-parent")
 
 class GithubApi(object):
 
@@ -17,16 +16,38 @@ class GithubApi(object):
         self._fetch_milestone_info()
 
     def retrieve_open_issues(self):
-        milestone_ = "%s/issues?milestone=%s&state=open" % (self._base_url, self._milestone)
+        """
+        >>> GithubApi(ORG_AND_PROJECT, 49).retrieve_open_issues()
+        []
+        """
+        return self._retrieve_issues("open")
+
+    def retrieve_closed_issues(self):
+        """
+        >>> len(GithubApi(ORG_AND_PROJECT, 49).retrieve_closed_issues())
+        2
+        """
+        return self._retrieve_issues("closed")
+
+    def _retrieve_issues(self, state):
+        milestone_ = "%s/issues?milestone=%s&state=%s" % (self._base_url, self._milestone, state)
         with contextlib.closing(urllib.urlopen(milestone_)) as h:
             return json.load(h)
 
     def _fetch_milestone_info(self):
+        """
+        >>> gh = GithubApi(ORG_AND_PROJECT, 49); mi = gh.milestone_info; mi['title'], mi['open_issues'], mi['closed_issues']
+        (u'1.5.12', 0, 2)
+        """
         milestones = "%s/milestones/%s" % (self._base_url, self._milestone)
         with contextlib.closing(urllib.urlopen(milestones)) as h:
             self.milestone_info = json.load(h)
 
     def has_open_issues(self):
+        """
+        >>> gh = GithubApi(ORG_AND_PROJECT, 49); gh.has_open_issues()
+        False
+        """
         return self.milestone_info["open_issues"] > 0
 
 if __name__ == "__main__":
@@ -57,8 +78,8 @@ mvn \
 release:prepare release:perform
     """ % locals()
     raw_input("About to execute:\n%s\nHit enter to proceed, CTRL+D to cancel" % cmd)
-    os.system(cmd)
-    os.system("git push --tags")
-    os.system("mvn release:clean")
-    os.system("git reset origin/master")
-    os.system("git checkout .")
+    commands = [cmd, "git push --tags", "mvn release:clean", "git reset origin/master", "git checkout ."]
+    for command in commands:
+        rc = os.system(command)
+        if rc != 0:
+            sys.exit(rc)
