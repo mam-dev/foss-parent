@@ -52,7 +52,7 @@ mvn \
 -DdevelopmentVersion=1-SNAPSHOT \
 -DreleaseVersion=%(release_version)s \
 -DpushChanges=false \
--DlocalRepository=true \
+-DlocalCheckout=true \
 -Dgoals="deploy changes:announcement-generate" \
 release:prepare release:perform
     """ % locals()
