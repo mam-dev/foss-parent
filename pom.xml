@@ -54,14 +54,14 @@
 
         <!-- apache plugin versions and configurations, please sort alphabetically -->
         <maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
-        <maven-assembly-plugin.version>2.6</maven-assembly-plugin.version>
+        <maven-assembly-plugin.version>3.0.0</maven-assembly-plugin.version>
         <maven-changelog-plugin.version>2.2</maven-changelog-plugin.version>
-        <maven-changes-plugin.version>2.12</maven-changes-plugin.version>
+        <maven-changes-plugin.version>2.12.1</maven-changes-plugin.version>
         <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
         <maven-checkstyle-plugin.configLocation>/net/oneandone/maven/poms/fossconfigs/checkstyle-ruleset.xml</maven-checkstyle-plugin.configLocation>
         <maven-checkstyle-plugin.suppressionsLocation>/net/oneandone/maven/poms/fossconfigs/checkstyle-suppressions.xml</maven-checkstyle-plugin.suppressionsLocation>
         <maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
-        <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>2.10</maven-dependency-plugin.version>
         <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
         <maven-enforcer-plugin.version>1.4.1</maven-enforcer-plugin.version>
@@ -70,7 +70,7 @@
         <maven-help-plugin.version>2.2</maven-help-plugin.version>
         <maven-invoker-plugin.version>2.0.0</maven-invoker-plugin.version>
         <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
-        <maven-pmd-plugin.version>3.6</maven-pmd-plugin.version>
+        <maven-pmd-plugin.version>3.7</maven-pmd-plugin.version>
         <maven-plugin-plugin.version>3.5</maven-plugin-plugin.version>
         <maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
         <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
@@ -78,7 +78,7 @@
         <maven-jxr-plugin.version>2.5</maven-jxr-plugin.version>
         <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
         <maven-resources-plugin.version>3.0.1</maven-resources-plugin.version>
-        <maven-site-plugin.version>3.5.1</maven-site-plugin.version>
+        <maven-site-plugin.version>3.6</maven-site-plugin.version>
         <maven-scm-plugin.version>1.9.5</maven-scm-plugin.version>
         <maven-scm-publish-plugin.version>1.1</maven-scm-publish-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
@@ -102,21 +102,21 @@
 
         <!-- non plugin versions, please sort alphabetically -->
         <doxia-module-markdown.version>1.7</doxia-module-markdown.version>
-        <extra-enforcer-rules.version>1.0-beta-5</extra-enforcer-rules.version>
+        <extra-enforcer-rules.version>1.0-beta-6</extra-enforcer-rules.version>
         <foss-configs.version>1.2</foss-configs.version>
-        <guava.version>19.0</guava.version>
-        <gson.version>2.7</gson.version>
+        <guava.version>20.0</guava.version>
+        <gson.version>2.8.0</gson.version>
         <guice.version>3.0</guice.version>
-        <joda-time.joda-time.version>2.9.4</joda-time.joda-time.version>
+        <joda-time.joda-time.version>2.9.6</joda-time.joda-time.version>
         <joda-time.joda-time-hibernate.version>1.4</joda-time.joda-time-hibernate.version>
         <joda-time.joda-time-jsptags.version>1.1.1</joda-time.joda-time-jsptags.version>
         <org.joda.joda-beans.version>1.8</org.joda.joda-beans.version>
         <org.joda.joda-convert.version>1.8.1</org.joda.joda-convert.version>
-        <org.joda.joda-money.version>0.11</org.joda.joda-money.version>
+        <org.joda.joda-money.version>0.12</org.joda.joda-money.version>
         <org.joda.joda-primitives.version>1.0</org.joda.joda-primitives.version>
         <org.slf4j.version>1.7.21</org.slf4j.version>
         <plexus-component-metadata.version>1.7.1</plexus-component-metadata.version>
-        <kotlin.version>1.0.4</kotlin.version>
+        <kotlin.version>1.0.5-2</kotlin.version>
 
         <!-- define coverage ratios used during jacoco-maven-plugin:check -->
         <jacoco.check.classRatio>0.90</jacoco.check.classRatio>
@@ -162,7 +162,7 @@
             <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-core</artifactId>
-                <version>2.2.0-beta.1</version>
+                <version>2.2.28</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
