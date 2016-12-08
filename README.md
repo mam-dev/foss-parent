@@ -90,5 +90,5 @@ To deploy a site to github using [maven-scm-publish-plugin](http://maven.apache.
 Adjust license headers
 ----------------------
 
->     mvn com.mycila.maven-license-plugin:maven-license-plugin:format
+>     mvn license:format
 
