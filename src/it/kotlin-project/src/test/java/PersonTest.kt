@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
+import io.kotlintest.matchers.shouldBe
 import io.kotlintest.specs.StringSpec
 
 class PersonTest : StringSpec() {
     init {
         "John Doe should have a name" {
             val sut = Person("John Doe")
-            sut.name shouldEqual "John Doe"
+            sut.name shouldBe "John Doe"
         }
     }
 
