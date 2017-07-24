@@ -22,6 +22,16 @@ test:jdk8:3.3.9:
   <<: *test
   image: maven:3.3.9-jdk-8
 
+test:jdk8-alpine:3.5:
+  <<: *test
+  image: maven:3.5-jdk-8-alpine
+  allow_failure: true
+
+test:jdk9:3.5:
+  <<: *test
+  image: maven:3.5-jdk-9
+  allow_failure: true
+
 pages:
   image: alpine
   stage: deploy
