@@ -1,16 +1,5 @@
-image: maven:3.5
 variables:
   MAVEN_OPTS: "-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN -Dorg.slf4j.simpleLogger.showDateTime=true -Djava.awt.headless=true"
-
-.validate: &validate
-  stage: build
-  script:
-    - 'mvn test-compile'
-  except:
-    - gh-pages
-  artifacts:
-    paths:
-      - "target/*"
 
 .test: &test
   stage: test
@@ -22,23 +11,24 @@ variables:
 before_script:
   - uname -a
 
-validate:jdk8:
-  <<: *validate
-
-test:jdk8:
+test:jdk8:3.5:
   <<: *test
-  dependencies:
-    - validate:jdk8
+  image: maven:3.5-jdk-8
   artifacts:
     paths:
       - target/staging
 
+test:jdk8:3.3.9:
+  <<: *test
+  image: maven:3.3.9-jdk-8
+
 pages:
+  image: alpine
   stage: deploy
   script:
     - mv target/staging public
   dependencies:
-    - test:jdk8
+    - test:jdk8:3.5
   artifacts:
     paths:
     - public
