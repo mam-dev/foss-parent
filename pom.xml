@@ -705,6 +705,10 @@
                         <rules>
                             <banDuplicateClasses>
                                 <findAllDuplicates>true</findAllDuplicates>
+                                <!-- See https://youtrack.jetbrains.com/issue/KT-19200 -->
+                                <ignoreClasses>
+                                    <ignoreClass>kotlin.*</ignoreClass>
+                                </ignoreClasses>
                             </banDuplicateClasses>
                             <requireMavenVersion>
                                 <version>[3.2.5,)</version>
