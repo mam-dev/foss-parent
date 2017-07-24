@@ -707,10 +707,10 @@
                                 <findAllDuplicates>true</findAllDuplicates>
                             </banDuplicateClasses>
                             <requireMavenVersion>
-                                <version>[3.2.5,)</version>
+                                <version>[3.3.9,)</version>
                             </requireMavenVersion>
                             <requireJavaVersion>
-                                <version>1.7</version>
+                                <version>1.8</version>
                             </requireJavaVersion>
                             <requireNoRepositories />
                             <requireReleaseDeps>
