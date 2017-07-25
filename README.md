@@ -5,7 +5,7 @@ Default License is Apache 2.0.
 
 [![Build Status](https://travis-ci.org/1and1/foss-parent.svg?branch=master)](https://travis-ci.org/1and1/foss-parent)
 [![Build Status](https://gitlab.com/mfriedenhagen/foss-parent/badges/master/build.svg)](https://gitlab.com/mfriedenhagen/foss-parent/commits/master)
-[![Release](https://img.shields.io/maven-central/v/net.oneandone.maven.poms/foss-parent*.svg?label=latest%20release)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.oneandone.maven.poms%22%20AND%20a%3A%22foss-parent%22)
+[![Release](https://img.shields.io/maven-central/v/net.oneandone.maven.poms/foss-parent.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.oneandone.maven.poms%22%20AND%20a%3A%22foss-parent%22)
 [![GitHub license](https://img.shields.io/github/license/1and1/foss-parent.svg)]()
 
 Changelog
