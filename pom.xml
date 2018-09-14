@@ -97,7 +97,7 @@
         <velocity-maven-plugin.version>0.3.1</velocity-maven-plugin.version>
         <versions-maven-plugin.version>2.4</versions-maven-plugin.version>
         <sonar-maven-plugin.version>3.3.0.603</sonar-maven-plugin.version>
-        <gmavenplus-plugin.version>1.5</gmavenplus-plugin.version>
+        <gmavenplus-plugin.version>1.6</gmavenplus-plugin.version>
         <jgitflow-maven-plugin.version>1.0-m5.1</jgitflow-maven-plugin.version>
 
         <!-- non plugin versions, please sort alphabetically -->
@@ -938,7 +938,7 @@
                         <execution>
                             <id>default-testCompile</id>
                             <goals>
-                                <goal>testCompile</goal>
+                                <goal>compileTests</goal>
                             </goals>
                         </execution>
                     </executions>
