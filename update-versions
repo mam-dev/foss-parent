@@ -1,2 +1,4 @@
 #!/bin/sh
-mvn -B versions:update-properties versions:use-latest-releases | grep Updated | sed -E -e 's,\[INFO\] ,,' -e 's,^[0-9]+ ,,'
+# You may call this like ./update-versions -DallowMajorUpdates=true
+# By default no major updates happen
+mvn -B versions:update-properties versions:use-latest-releases $* | grep Updated | sed -E -e 's,\[INFO\] ,,' -e 's,^[0-9]+ ,,'

@@ -7,8 +7,6 @@ String buildLog = file.getText("UTF-8");
 
 assert !buildLog.contains('net.sourceforge.cobertura.reporting.xml.XMLReport');
 
-assert new File( basedir, "target/jenkins-description.html").exists();
-
 assert new File( basedir, "target/failsafe-reports/failsafe-summary.xml").exists();
 assert new File( basedir, "target/site/failsafe-report.html").exists();
 
@@ -18,8 +16,8 @@ assert new File( basedir, "target/site/cpd.html" ).exists();
 assert new File( basedir, "target/pmd.xml" ).exists();
 assert new File( basedir, "target/site/pmd.html" ).exists();
 
-assert new File( basedir, "target/findbugs.xml" ).exists();
-assert new File( basedir, "target/site/findbugs.html" ).exists();
+assert new File( basedir, "target/spotbugsXml.xml" ).exists();
+assert new File( basedir, "target/site/spotbugs.html" ).exists();
 
 assert new File( basedir, "target/checkstyle-result.xml" ).exists();
 assert new File( basedir, "target/site/checkstyle.html" ).exists();
