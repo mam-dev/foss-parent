@@ -1,12 +1,18 @@
 language: java
+git:
+  quiet: true
 sudo: no
-env: JOB_URL=http://jenkins.example.com/ci/
+env:
+  - MVN=3.5.4
+  - MVN=3.6.0
 jdk:
-  - oraclejdk8
+  - openjdk8
+  - openjdk11
 install:
-  - "mvn -N -q io.takari:maven:wrapper -Dmaven=3.5.0"
-  - "./mvnw -Dinvoker.skip=true -Dmaven.site.skip=true clean verify site dependency:go-offline"
-script: 'env MAVEN_OPTS="-Xms64m -Xmx256m -XX:MaxPermSize=192m -Djava.awt.headless=true" ./mvnw -Dversions.skip=true clean verify site'
+  - mvn -B -N -q io.takari:maven:wrapper -Dmaven=3.5.4
+script:
+  - export MAVEN_OPTS="-Xms64m -Xmx256m -Djava.awt.headless=true -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN -Dorg.slf4j.simpleLogger.showDateTime=true"
+  - ./mvnw -B -Dversions.skip=true -DaltDeploymentRepository=does_not_matter::file:///tmp/repo1 clean verify site
 cache:
     directories:
     - $HOME/.m2

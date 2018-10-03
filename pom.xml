@@ -33,9 +33,9 @@
         <netbeans.checkstyle.format>true</netbeans.checkstyle.format>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <oneandone.java.source>1.7</oneandone.java.source>
-        <oneandone.java.target>1.7</oneandone.java.target>
-        <oneandone.java.docversion>7</oneandone.java.docversion>
+        <oneandone.java.source>1.8</oneandone.java.source>
+        <oneandone.java.target>1.8</oneandone.java.target>
+        <oneandone.java.docversion>8</oneandone.java.docversion>
         <scmpublish.content>target/staging</scmpublish.content>
 
         <!-- used during release:prepare and release:perform -->
@@ -54,69 +54,68 @@
 
         <!-- apache plugin versions and configurations, please sort alphabetically -->
         <maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
-        <maven-assembly-plugin.version>3.0.0</maven-assembly-plugin.version>
+        <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
         <maven-changelog-plugin.version>2.2</maven-changelog-plugin.version>
         <maven-changes-plugin.version>2.12.1</maven-changes-plugin.version>
-        <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
         <maven-checkstyle-plugin.configLocation>/net/oneandone/maven/poms/fossconfigs/checkstyle-ruleset.xml</maven-checkstyle-plugin.configLocation>
         <maven-checkstyle-plugin.suppressionsLocation>/net/oneandone/maven/poms/fossconfigs/checkstyle-suppressions.xml</maven-checkstyle-plugin.suppressionsLocation>
-        <maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
-        <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
-        <maven-dependency-plugin.version>3.0.1</maven-dependency-plugin.version>
-        <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
-        <maven-enforcer-plugin.version>1.4.1</maven-enforcer-plugin.version>
-        <maven-failsafe-plugin.version>2.20</maven-failsafe-plugin.version>
+        <maven-checkstyle-plugin.version>3.0.0</maven-checkstyle-plugin.version>
+        <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
+        <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+        <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
+        <maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
+        <maven-enforcer-plugin.version>3.0.0-M2</maven-enforcer-plugin.version>
+        <maven-failsafe-plugin.version>${maven-surefire-plugin.version}</maven-failsafe-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
-        <maven-help-plugin.version>2.2</maven-help-plugin.version>
-        <maven-invoker-plugin.version>3.0.1</maven-invoker-plugin.version>
-        <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
-        <maven-pmd-plugin.version>3.8</maven-pmd-plugin.version>
-        <maven-plugin-plugin.version>3.5</maven-plugin-plugin.version>
-        <maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
-        <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
-        <maven-javadoc-plugin.version>3.0.0-M1</maven-javadoc-plugin.version>
-        <maven-jxr-plugin.version>2.5</maven-jxr-plugin.version>
+        <maven-help-plugin.version>3.1.0</maven-help-plugin.version>
+        <maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
+        <maven-invoker-plugin.version>3.1.0</maven-invoker-plugin.version>
+        <maven-jar-plugin.version>3.1.0</maven-jar-plugin.version>
+        <maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
+        <maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
+        <maven-plugin-plugin.version>3.6.0</maven-plugin-plugin.version>
+        <maven-pmd-plugin.version>3.11.0</maven-pmd-plugin.version>
+        <maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
         <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
-        <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
-        <maven-site-plugin.version>3.6</maven-site-plugin.version>
-        <maven-scm-plugin.version>1.9.5</maven-scm-plugin.version>
-        <maven-scm-publish-plugin.version>1.1</maven-scm-publish-plugin.version>
+        <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
+        <maven-scm-plugin.version>1.11.1</maven-scm-plugin.version>
+        <maven-scm-publish-plugin.version>3.0.0</maven-scm-publish-plugin.version>
+        <maven-site-plugin.version>3.7.1</maven-site-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
-        <maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
 
         <!-- non apache plugin versions and configurations, please sort alphabetically -->
         <maven-license-plugin.version>3.0</maven-license-plugin.version>
         <maven-license-plugin.header>/net/oneandone/maven/poms/fossconfigs/license-header.txt</maven-license-plugin.header>
         <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
-        <findbugs-maven-plugin.version>3.0.4</findbugs-maven-plugin.version>
-        <findbugs-maven-plugin.excludeFilterFile>net/oneandone/maven/poms/fossconfigs/findbugs-exclude.xml</findbugs-maven-plugin.excludeFilterFile>
+        <spotbugs-maven-plugin.version>3.1.8</spotbugs-maven-plugin.version>
+        <spotbugs.excludeFilterFile>net/oneandone/maven/poms/fossconfigs/findbugs-exclude.xml</spotbugs.excludeFilterFile>
         <github-site-plugin.version>0.12</github-site-plugin.version>
         <github.global.server>github</github.global.server>
-        <jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.2</jacoco-maven-plugin.version>
         <jdepend-maven-plugin.version>2.0</jdepend-maven-plugin.version>
-        <velocity-maven-plugin.version>0.3.1</velocity-maven-plugin.version>
-        <versions-maven-plugin.version>2.4</versions-maven-plugin.version>
-        <sonar-maven-plugin.version>3.3.0.603</sonar-maven-plugin.version>
-        <gmavenplus-plugin.version>1.6</gmavenplus-plugin.version>
+        <versions-maven-plugin.version>2.7</versions-maven-plugin.version>
+        <sonar-maven-plugin.version>3.5.0.1254</sonar-maven-plugin.version>
+        <gmavenplus-plugin.version>1.6.2</gmavenplus-plugin.version>
         <jgitflow-maven-plugin.version>1.0-m5.1</jgitflow-maven-plugin.version>
 
         <!-- non plugin versions, please sort alphabetically -->
-        <doxia-module-markdown.version>1.7</doxia-module-markdown.version>
-        <extra-enforcer-rules.version>1.0-beta-6</extra-enforcer-rules.version>
+        <doxia-module-markdown.version>1.8</doxia-module-markdown.version>
+        <extra-enforcer-rules.version>1.0-beta-9</extra-enforcer-rules.version>
         <foss-configs.version>1.2</foss-configs.version>
-        <guava.version>22.0</guava.version>
-        <gson.version>2.8.1</gson.version>
+        <guava.version>23.0-rc1-android</guava.version>
+        <gson.version>2.8.5</gson.version>
         <guice.version>3.0</guice.version>
-        <joda-time.joda-time.version>2.9.9</joda-time.joda-time.version>
+        <joda-time.joda-time.version>2.10.1</joda-time.joda-time.version>
         <joda-time.joda-time-hibernate.version>1.4</joda-time.joda-time-hibernate.version>
         <joda-time.joda-time-jsptags.version>1.1.1</joda-time.joda-time-jsptags.version>
-        <org.joda.joda-beans.version>1.13</org.joda.joda-beans.version>
-        <org.joda.joda-convert.version>1.8.2</org.joda.joda-convert.version>
-        <org.joda.joda-money.version>0.12</org.joda.joda-money.version>
+        <org.joda.joda-beans.version>2.3</org.joda.joda-beans.version>
+        <org.joda.joda-convert.version>2.1.2</org.joda.joda-convert.version>
+        <org.joda.joda-money.version>1.0.1</org.joda.joda-money.version>
         <org.joda.joda-primitives.version>1.0</org.joda.joda-primitives.version>
-        <org.slf4j.version>1.7.25</org.slf4j.version>
+        <org.slf4j.version>1.8.0-beta2</org.slf4j.version>
         <plexus-component-metadata.version>1.7.1</plexus-component-metadata.version>
-        <kotlin.version>1.1.3-2</kotlin.version>
+        <kotlin.version>1.3.10</kotlin.version>
 
         <!-- define coverage ratios used during jacoco-maven-plugin:check -->
         <jacoco.check.classRatio>0.90</jacoco.check.classRatio>
@@ -129,7 +128,9 @@
         <!-- define maven-invoker-plugin behaviour -->
         <invoker.showErrors>false</invoker.showErrors>
         <invoker.streamLogs>false</invoker.streamLogs>
-        <logback.version>1.2.3</logback.version>
+        <logback.version>1.3.0-alpha4</logback.version>
+        <!-- versions-maven-plugin do - not allow major updates -->
+        <allowMajorUpdates>false</allowMajorUpdates>
     </properties>
 
     <licenses>
@@ -162,8 +163,14 @@
             <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-core</artifactId>
-                <version>2.8.47</version>
+                <version>2.23.4</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.spockframework</groupId>
+                <artifactId>spock-bom</artifactId>
+                <version>1.1-groovy-2.4</version>
+                <type>import</type>
             </dependency>
 
             <!-- joda -->
@@ -205,7 +212,7 @@
             <dependency>
                 <groupId>org.codehaus.plexus</groupId>
                 <artifactId>plexus-utils</artifactId>
-                <version>3.0.24</version>
+                <version>3.1.0</version>
             </dependency>
 
             <!-- logging -->
@@ -259,17 +266,17 @@
             <dependency>
                 <groupId>org.apache.maven</groupId>
                 <artifactId>maven-artifact</artifactId>
-                <version>3.5.0</version>
+                <version>3.6.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven</groupId>
                 <artifactId>maven-core</artifactId>
-                <version>3.5.0</version>
+                <version>3.6.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugin-tools</groupId>
                 <artifactId>maven-plugin-annotations</artifactId>
-                <version>3.5</version>
+                <version>3.6.0</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.apache.maven</groupId>
@@ -280,7 +287,7 @@
             <dependency>
                 <groupId>org.apache.maven</groupId>
                 <artifactId>maven-plugin-api</artifactId>
-                <version>3.5.0</version>
+                <version>3.6.0</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.plexus</groupId>
@@ -297,47 +304,6 @@
                 <groupId>org.apache.maven.scm</groupId>
                 <artifactId>maven-scm</artifactId>
                 <version>${maven-scm-plugin.version}</version>
-            </dependency>
-
-            <!-- Google libraries -->
-            <dependency>
-                <groupId>com.google.code.gson</groupId>
-                <artifactId>gson</artifactId>
-                <version>${gson.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>${guava.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.google.inject</groupId>
-                <artifactId>guice</artifactId>
-                <version>${guice.version}</version>
-            </dependency>
-
-            <!-- httpclient -->
-            <dependency>
-                <groupId>org.apache.httpcomponents</groupId>
-                <artifactId>httpclient</artifactId>
-                <version>4.5.3</version>
-                <exclusions>
-                    <exclusion>
-                        <!-- Always depend on jcl-over-slf4j instead -->
-                        <artifactId>commons-logging</artifactId>
-                        <groupId>commons-logging</groupId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.httpcomponents</groupId>
-                <artifactId>httpclient-cache</artifactId>
-                <version>4.5.3</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.httpcomponents</groupId>
-                <artifactId>httpcore</artifactId>
-                <version>4.4.6</version>
             </dependency>
 
             <!-- javax -->
@@ -359,7 +325,7 @@
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
-                <version>3.1.0</version>
+                <version>4.0.1</version>
             </dependency>
 
             <!-- kotlin -->
@@ -370,7 +336,7 @@
             </dependency>
             <dependency>
                 <groupId>org.jetbrains.kotlin</groupId>
-                <artifactId>kotlin-stdlib-jre8</artifactId>
+                <artifactId>kotlin-stdlib-jdk8</artifactId>
                 <version>${kotlin.version}</version>
             </dependency>
             <dependency>
@@ -387,13 +353,13 @@
             <dependency>
                 <groupId>io.kotlintest</groupId>
                 <artifactId>kotlintest</artifactId>
-                <version>2.0.4</version>
+                <version>2.0.7</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.reflections</groupId>
                 <artifactId>reflections</artifactId>
-                <version>0.9.10</version>
+                <version>0.9.11</version>
                 <exclusions>
                     <!-- kotlintest depends on guava which depends on com.google.code.findbugs:jsr105
                          This provides the same classes.
@@ -783,17 +749,9 @@
                     <version>${maven-plugin-plugin.version}</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>findbugs-maven-plugin</artifactId>
-                    <version>${findbugs-maven-plugin.version}</version>
-                    <configuration>
-                        <excludeFilterFile>${findbugs-maven-plugin.excludeFilterFile}</excludeFilterFile>
-                        <xmlOutput>true</xmlOutput>
-                        <threshold>Low</threshold>
-                        <effort>Max</effort>
-                        <debug>false</debug>
-                        <relaxed>false</relaxed>
-                    </configuration>
+                    <groupId>com.github.spotbugs</groupId>
+                    <artifactId>spotbugs-maven-plugin</artifactId>
+                    <version>${spotbugs-maven-plugin.version}</version>
                     <executions>
                         <execution>
                             <id>default-check</id>
@@ -802,18 +760,6 @@
                             </goals>
                         </execution>
                     </executions>
-                </plugin>
-                <plugin>
-                    <groupId>net.rumati.maven.plugins</groupId>
-                    <artifactId>velocity-maven-plugin</artifactId>
-                    <version>${velocity-maven-plugin.version}</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>net.oneandone.maven.poms</groupId>
-                            <artifactId>foss-configs</artifactId>
-                            <version>${foss-configs.version}</version>
-                        </dependency>
-                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -826,10 +772,21 @@
                     </configuration>
                     <executions>
                         <execution>
-                            <id>integration-test</id>
+                            <id>default-pre-integration-test</id>
                             <goals>
                                 <goal>install</goal>
-                                <goal>run</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>default-integration-test</id>
+                            <goals>
+                                <goal>integration-test</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>default-verify</id>
+                            <goals>
+                                <goal>verify</goal>
                             </goals>
                         </execution>
                     </executions>
@@ -965,18 +922,22 @@
                     <artifactId>versions-maven-plugin</artifactId>
                     <version>${versions-maven-plugin.version}</version>
                     <configuration>
-                        <allowMajorUpdates>false</allowMajorUpdates>
+                        <!--
+                        http://www.mojohaus.org/versions-maven-plugin/use-latest-releases-mojo.html
+                        Syntax is  "groupId:artifactId:type:classifier:version"
+                        -->
                         <excludes>
-                            <!-- No we do not want 99.0-does-not-exist -->
+                            <!-- No, we do not want 99.0-does-not-exist -->
                             <exclude>commons-logging:commons-logging:*:*:99.0-does-not-exist</exclude>
                             <!-- No we do not want a beta or alpha-->
                             <exclude>junit:junit:*:*-beta*</exclude>
                             <exclude>org.apache.httpcomponents:*:*:*:4.4-alpha*</exclude>
                             <exclude>org.apache.httpcomponents:*:*:*:4.4-beta*</exclude>
                             <exclude>org.mockito:*:*:*:*-beta*</exclude>
-                            <!-- do not include artifacts from atlassian or jenkins -->
+                            <!-- do not include vender version artifacts from atlassian or jenkins -->
                             <exclude>*:*:*:*:*atlassian*</exclude>
                             <exclude>*:*:*:*:*jenkins*</exclude>
+                            <exclude>com.google.guava:guava:*:*:*android*</exclude>
                         </excludes>
                         <properties>
                             <property>
@@ -1103,35 +1064,6 @@
             </reporting>
         </profile>
         <profile>
-            <id>foss-parent-jenkins-description</id>
-            <activation>
-                <property>
-                    <name>env.JOB_URL</name>
-                </property>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>net.rumati.maven.plugins</groupId>
-                        <artifactId>velocity-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>foss-parent-jenkins-description</id>
-                                <phase>validate</phase>
-                                <goals>
-                                    <goal>velocity</goal>
-                                </goals>
-                                <configuration>
-                                    <template>/net/oneandone/maven/poms/fossconfigs/jenkins-description.html.vm</template>
-                                    <outputFile>target/jenkins-description.html</outputFile>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
             <id>foss-parent-enable-invoker-log-output-on-travis</id>
             <activation>
                 <property>
@@ -1216,8 +1148,8 @@
                         <artifactId>maven-site-plugin</artifactId>
                     </plugin>
                     <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>findbugs-maven-plugin</artifactId>
+                        <groupId>com.github.spotbugs</groupId>
+                        <artifactId>spotbugs-maven-plugin</artifactId>
                     </plugin>
                     <plugin>
                         <groupId>org.jacoco</groupId>
@@ -1320,17 +1252,9 @@
                         </reportSets>
                     </plugin>
                     <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>findbugs-maven-plugin</artifactId>
-                        <version>${findbugs-maven-plugin.version}</version>
-                        <configuration>
-                            <excludeFilterFile>${findbugs-maven-plugin.excludeFilterFile}</excludeFilterFile>
-                            <xmlOutput>true</xmlOutput>
-                            <threshold>Low</threshold>
-                            <effort>Max</effort>
-                            <debug>false</debug>
-                            <relaxed>false</relaxed>
-                        </configuration>
+                        <groupId>com.github.spotbugs</groupId>
+                        <artifactId>spotbugs-maven-plugin</artifactId>
+                        <version>${spotbugs-maven-plugin.version}</version>
                     </plugin>
                     <plugin>
                         <groupId>org.jacoco</groupId>
