@@ -35,6 +35,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <oneandone.java.source>1.8</oneandone.java.source>
         <oneandone.java.target>1.8</oneandone.java.target>
+        <maven.compiler.source>${oneandone.java.source}</maven.compiler.source>
+        <maven.compiler.target>${oneandone.java.target}</maven.compiler.target>
         <oneandone.java.docversion>8</oneandone.java.docversion>
         <scmpublish.content>target/staging</scmpublish.content>
 
@@ -486,10 +488,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>${maven-compiler-plugin.version}</version>
-                    <configuration>
-                        <source>${oneandone.java.source}</source>
-                        <target>${oneandone.java.target}</target>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>com.mycila</groupId>
@@ -625,9 +623,9 @@
                     <configuration>
                         <quiet>true</quiet>
                         <links>
-                            <link>http://docs.oracle.com/javase/${oneandone.java.docversion}/docs/api/</link>
-                            <link>http://junit.org/junit4/javadoc/latest/</link>
-                            <link>http://www.slf4j.org/apidocs/</link>
+                            <link>https://docs.oracle.com/javase/${oneandone.java.docversion}/docs/api/</link>
+                            <link>https://junit.org/junit4/javadoc/latest/</link>
+                            <link>https://www.slf4j.org/apidocs/</link>
                         </links>
                     </configuration>
                     <executions>
