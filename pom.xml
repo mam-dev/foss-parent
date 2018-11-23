@@ -118,6 +118,7 @@
         <org.slf4j.version>1.7.25</org.slf4j.version>
         <plexus-component-metadata.version>1.7.1</plexus-component-metadata.version>
         <kotlin.version>1.3.10</kotlin.version>
+        <groovy.version>2.5.4</groovy.version>
 
         <!-- define coverage ratios used during jacoco-maven-plugin:check -->
         <jacoco.check.classRatio>0.90</jacoco.check.classRatio>
@@ -167,12 +168,6 @@
                 <artifactId>mockito-core</artifactId>
                 <version>2.23.4</version>
                 <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.spockframework</groupId>
-                <artifactId>spock-bom</artifactId>
-                <version>1.1-groovy-2.4</version>
-                <type>import</type>
             </dependency>
 
             <!-- joda -->
@@ -371,6 +366,27 @@
                         <artifactId>annotations</artifactId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+
+            <!-- groovy and spock for testing -->
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-all</artifactId>
+                <version>${groovy.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy</artifactId>
+                <version>${groovy.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.spockframework</groupId>
+                <artifactId>spock-bom</artifactId>
+                <version>1.2-groovy-2.5</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -1266,6 +1282,30 @@
                     </plugin>
                 </plugins>
             </reporting>
+        </profile>
+        <profile>
+            <id>foss-parent-spock-tests</id>
+            <activation>
+                <file>
+                    <exists>src/test/groovy</exists>
+                </file>
+            </activation>
+            <dependencies>
+                <!-- test dependencies -->
+                <dependency>
+                    <groupId>org.spockframework</groupId>
+                    <artifactId>spock-core</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.gmavenplus</groupId>
+                        <artifactId>gmavenplus-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
     <distributionManagement>
