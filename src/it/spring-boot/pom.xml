@@ -1,0 +1,126 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>@project.groupId@</groupId>
+        <artifactId>@project.artifactId@</artifactId>
+        <version>@project.version@</version>
+    </parent>
+
+    <artifactId>sample-project-spring-boot</artifactId>
+    <version>3000-SNAPSHOT</version>
+
+    <name>sample project for spring-boot</name>
+    <description>Demo project for Spring Boot</description>
+    <url>https://github.com/1and1/${project.artifactId}/</url>
+    <inceptionYear>2012</inceptionYear>
+    <organization>
+        <name>1&amp;1</name>
+        <url>https://1and1.github.com/</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <id>mifr</id>
+            <name>Mirko Friedenhagen</name>
+            <organization>1 &amp; 1 Internet AG</organization>
+            <organizationUrl>${project.url}</organizationUrl>
+            <url>http://github.com/mfriedenhagen/</url>
+            <timezone>+1</timezone>
+            <roles>
+                <role>developer</role>
+                <role>project lead</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/1and1/${project.artifactId}.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/1and1/${project.artifactId}.git</developerConnection>
+        <url>https://github.com/1and1/${project.artifactId}/</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/1and1/foss-parent/issues</url>
+    </issueManagement>
+
+    <properties>
+        <enforcer.fail>false</enforcer.fail>
+        <versions.skip>true</versions.skip>
+        <spring-boot.version>2.0.6.RELEASE</spring-boot.version>
+        <spring-framework.version>5.0.10.RELEASE</spring-framework.version>
+        <jacoco.check.classRatio>0.30</jacoco.check.classRatio>
+        <jacoco.check.instructionRatio>0.30</jacoco.check.instructionRatio>
+        <jacoco.check.methodRatio>0.30</jacoco.check.methodRatio>
+        <jacoco.check.branchRatio>0.30</jacoco.check.branchRatio>
+        <jacoco.check.complexityRatio>0.30</jacoco.check.complexityRatio>
+        <jacoco.check.lineRatio>0.30</jacoco.check.lineRatio>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>${spring-framework.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <executions>
+                    <execution>
+                        <id>default-repackage</id>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>default-build-info</id>
+                        <goals>
+                            <goal>build-info</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
