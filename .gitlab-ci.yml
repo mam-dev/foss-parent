@@ -1,92 +1,27 @@
 variables:
-  DEFAULT_MAVEN_OPTS: "-Xms64m -Xmx256m -Djava.awt.headless=true -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN -Dorg.slf4j.simpleLogger.showDateTime=true"
+  MAVEN_OPTS: "-Xms64m -Xmx256m -Djava.awt.headless=true -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN -Dorg.slf4j.simpleLogger.showDateTime=true"
 
-.test36: &test36
+
+.template:
   stage: test
-  variables:
-    MAVEN_VERSION: 3.6.0
-  before_script:
-    - |-
-      uname -a # Show Image information
-      test -r /etc/os-release && cat /etc/os-release
-    - |-
-      # Download Maven
-      >&2 echo Download Maven ${MAVEN_VERSION}
-      export DEBIAN_FRONTEND=noninteractive && apt-get -qq update && apt-get install -qq -o=Dpkg::Use-Pty=0 --no-install-recommends -y ca-certificates curl git > /dev/null
-      /usr/bin/curl -s https://repo1.maven.org/maven2/org/apache/maven/apache-maven/${MAVEN_VERSION}/apache-maven-${MAVEN_VERSION}-bin.tar.gz | ( cd /opt && tar xz )
-      export PATH=/opt/apache-maven-${MAVEN_VERSION}/bin:$PATH
-      export MAVEN_OPTS="$DEFAULT_MAVEN_OPTS $MAVEN_OPTS"
-      if [ -d /opt/java/openjdk ]
-      then
-        export JAVA_HOME=/opt/java/openjdk
-      else
-        export JAVA_HOME=`ls -1d /usr/lib/jvm/*`
-      fi
-      >&2 echo JAVA_HOME=${JAVA_HOME}
-      unset JAVA_TOOL_OPTIONS
+  image: maven:${TAG}
   script:
     - >-
       mvn -B -V
       deploy site site:stage
       -DaltDeploymentRepository=does_not_matter::file:///tmp/repo1
-  except:
-    - gh-pages
+
+required:
+  extends: .template
+  parallel:
+    matrix:
+      - TAG: 3.8.5-eclipse-temurin-8
+      - TAG: 3.8.5-eclipse-temurin-11
+
+optional:
+  extends: .template
+  parallel:
+    matrix:
+      - TAG: 3.8.5-eclipse-temurin-17
   allow_failure: true
-
-.test35: &test35
-  <<: *test36
-  variables:
-    MAVEN_VERSION: 3.5.4
-
-# ZULU
-test:zulu:36 8:
-  <<: *test36
-  image: azul/zulu-openjdk-debian:8
-  artifacts:
-    paths:
-      - target/staging
-  allow_failure: false
-
-test:zulu:36 11:
-  <<: *test36
-  image: azul/zulu-openjdk-debian:11
-
-test:zulu:35 8:
-  <<: *test35
-  image: azul/zulu-openjdk-debian:8
-
-test:zulu:35 11:
-  <<: *test35
-  image: azul/zulu-openjdk-debian:11
-
-# ADOPTOPENJDK
-test:adoptopenjdk:36 8:
-  <<: *test36
-  image: adoptopenjdk/openjdk8:latest
-
-test:adoptopenjdk:36 11:
-  <<: *test36
-  image: adoptopenjdk/openjdk11:latest
-
-test:adoptopenjdk:35 8:
-  <<: *test35
-  image: adoptopenjdk/openjdk8:latest
-
-test:adoptopenjdk:35 11:
-  <<: *test35
-  image: adoptopenjdk/openjdk11:latest
-
-# PAGES
-pages:
-  image: alpine
-  stage: deploy
-  script:
-    - mv target/staging public
-  dependencies:
-    - test:zulu:36 8
-  artifacts:
-    paths:
-    - public
-  only:
-    - master
-
+  
